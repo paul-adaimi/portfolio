@@ -1,0 +1,51 @@
+.header {
+  background: #282c34;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* add shadow bottom */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  padding: 0;
+  text-decoration: none;
+}
+
+.logoText {
+  font-family: "Gugi";
+  margin: 0;
+  font-size: 50px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.link {
+  color: white;
+  font-family: "Gugi";
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.main {
+  padding: 2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  color: #6c757d;
+}

@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contentLeft {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 50%;
+}
+
+.contentCenter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contentRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
