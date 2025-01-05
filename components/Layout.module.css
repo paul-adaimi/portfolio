@@ -40,12 +40,12 @@
 }
 
 .main {
-  padding: 2rem;
+  background-color: #e8e9eb;
 }
 
 .footer {
   text-align: center;
   padding: 1rem;
-  background: #f8f9fa;
+  background: #c4c4c5;
   color: #6c757d;
 }

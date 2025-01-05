@@ -1,5 +1,11 @@
-import HomePage from "../components/Home";
+import PaulCoded from "../components/PaulCoded";
+import Intro from "../components/Intro";
 
 export default function Home() {
-  return <HomePage />;
+  return (
+    <>
+      <PaulCoded />
+      <Intro />
+    </>
+  );
 }

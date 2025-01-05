@@ -1,3 +1,10 @@
+.tree {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .content {
   display: flex;
   flex-direction: row;
@@ -13,7 +20,6 @@
 }
 
 .contentCenter {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,4 +30,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.text {
+  font-family: "Gugi";
+  font-size: 35px;
+  color: #282c34;
 }

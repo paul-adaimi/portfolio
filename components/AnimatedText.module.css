@@ -1,0 +1,22 @@
+.animatedText {
+  margin: 0;
+  font-family: Dot;
+  color: white;
+  display: inline-block;
+  transition: width 0.1s ease-in-out;
+}
+
+.animatedText::after {
+  content: ""; /* Empty content for the pseudo-element */
+  display: inline-block;
+  width: 2px; /* Width of the blinking border */
+  height: 13px; /* Height equal to the text */
+  background-color: white; /* Color of the border/cursor */
+  animation: blink 0.5s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0%;
+  }
+}
