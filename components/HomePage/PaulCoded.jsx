@@ -1,20 +1,12 @@
 import Image from "next/image";
 import styles from "./PaulCoded.module.css";
+import AnimatedTitle from "../AnimatedTitle";
 
 export default function PaulCoded() {
   return (
     <div className={styles.tree}>
       <div className={styles.treeTop}>
-        <h1
-          className={styles.text}
-          style={{
-            marginTop: 15,
-            marginBottom: 0,
-            fontSize: 60,
-          }}
-        >
-          {"<Paul Adaimi>"}
-        </h1>
+        <AnimatedTitle>{"Paul Adaimi"}</AnimatedTitle>
       </div>
       <div className={styles.content}>
         <div className={styles.contentLeft}>

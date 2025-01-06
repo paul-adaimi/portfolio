@@ -1,0 +1,42 @@
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-family: Gugi;
+  font-size: 60px;
+  margin: 0;
+  color: #282c34;
+}
+
+.animatedTitle {
+  margin: 0;
+  color: #282c34;
+  font-size: 60px;
+  font-family: Gugi;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  border-right: 2px solid #282c34; /* Simulate a cursor */
+  width: 0; /* Start with no width */
+  animation: typing 1.5s steps(30, end) forwards, blink 0.5s step-end 5 forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Full width reveals the text */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: transparent; /* Cursor blinks */
+  }
+  100% {
+    border-right-color: transparent; /* Make cursor invisible */
+  }
+}
