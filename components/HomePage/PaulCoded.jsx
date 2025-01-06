@@ -5,7 +5,7 @@ export default function PaulCoded() {
   return (
     <div className={styles.tree}>
       <div className={styles.treeTop}>
-        <p
+        <h1
           className={styles.text}
           style={{
             marginTop: 15,
@@ -14,7 +14,7 @@ export default function PaulCoded() {
           }}
         >
           {"<Paul Adaimi>"}
-        </p>
+        </h1>
       </div>
       <div className={styles.content}>
         <div className={styles.contentLeft}>

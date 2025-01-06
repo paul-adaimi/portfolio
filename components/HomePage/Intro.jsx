@@ -38,7 +38,7 @@ export default function Intro() {
                 </AnimatedText>
               </div>
             </div>
-            <div className={styles.phoneBezel}>
+            <div className={styles.phoneNotch}>
               <div className={styles.phoneSpeaker}></div>
               <div className={styles.phoneCamera}>
                 <div className={styles.phoneCameraInner}></div>
@@ -81,7 +81,7 @@ export default function Intro() {
                 </AnimatedText>
               </div>
             </div>
-            <div className={styles.laptopBezel}>
+            <div className={styles.laptopNotch}>
               <div className={styles.laptopCamera}>
                 <div className={styles.laptopCameraInner}></div>
               </div>

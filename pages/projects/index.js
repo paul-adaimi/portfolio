@@ -1,3 +1,5 @@
-export default function FirstPost() {
-  return <h1>My projects</h1>;
+import Index from "../../components/ProjectsPage/Index";
+
+export default function Projects() {
+  return <Index />;
 }
