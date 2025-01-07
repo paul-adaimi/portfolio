@@ -10,3 +10,11 @@
 .titleContainer {
   margin-top: 15px;
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}

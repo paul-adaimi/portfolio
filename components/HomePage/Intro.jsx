@@ -9,29 +9,35 @@ export default function Intro() {
       <h1 className={styles.title}>{"</Paul Adaimi>"}</h1>
       <div className={styles.subContent}>
         <div className={styles.card}>
-          <Phone>
-            <AnimatedText chunks={["$ Paul > "]}>
-              {"$ Paul > "} cd Paul\ Adaimi\'s\ Portfolio/
-              <br />
-              <br />
-              {"$ Paul > "} vim Readme.md
-              <br />
-              <br />
-              # Hello stranger...
-              <br />
-              ```
-              <br />I love building mobile apps.
-              <br />
-              <br />
-              Check my latest projects in the Projects section.
-              <br />
-              ```
-              <br />
-              :wq
-              <br />
-              <br />
-              {"$ Paul > "}
-            </AnimatedText>
+          <Phone isPadded={true}>
+            <div
+              style={{
+                marginTop: 18,
+              }}
+            >
+              <AnimatedText chunks={["$ Paul > "]}>
+                {"$ Paul > "} cd Paul\ Adaimi\'s\ Portfolio/
+                <br />
+                <br />
+                {"$ Paul > "} vim Readme.md
+                <br />
+                <br />
+                # Hello stranger...
+                <br />
+                ```
+                <br />I love building mobile apps.
+                <br />
+                <br />
+                Check my latest projects in the Projects section.
+                <br />
+                ```
+                <br />
+                :wq
+                <br />
+                <br />
+                {"$ Paul > "}
+              </AnimatedText>
+            </div>
           </Phone>
         </div>
         <div className={styles.card}>

@@ -1,18 +1,8 @@
 import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
 import { useState } from "react";
-import Phone from "../Phone";
 
-export default function VSCode({ projects }) {
-  const [selectedProject, setSelectedProject] = useState(projects[0]);
-
-  const handleTabClick = (project) => {
-    if (selectedProject === project) {
-      return;
-    }
-    setSelectedProject(project);
-  };
-
+export default function VSCode({ projects, selectedProject, handleTabClick }) {
   return (
     <div className={styles.window}>
       <div className={styles.windowTop}>
@@ -21,7 +11,8 @@ export default function VSCode({ projects }) {
         <div className={styles.button + " " + styles.expand}></div>
       </div>
       <div className={styles.windowMain}>
-        <div className={styles.windowMainLeft}>
+        <div className={styles.windowMainLeft}></div>
+        <div className={styles.windowMainRight}>
           <ProjectsList
             prefix={"<"}
             selectedProject={selectedProject}
@@ -35,9 +26,6 @@ export default function VSCode({ projects }) {
             handleTabClick={handleTabClick}
             projects={projects}
           />
-        </div>
-        <div className={styles.windowMainRight}>
-          <Phone>p</Phone>
         </div>
       </div>
       <div className={styles.windowBottom}></div>

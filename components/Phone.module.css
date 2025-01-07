@@ -1,9 +1,15 @@
 .phone {
+  min-width: 300px;
   width: 300px;
   height: 300px;
   background-color: black;
   border-top-right-radius: 30px;
   border-top-left-radius: 30px;
+}
+
+.phone.full {
+  height: 615px;
+  border-radius: 30px;
 }
 
 .phoneNotch {
@@ -17,6 +23,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.phoneNotch.full {
+  top: -567px;
+  width: 100px;
+  left: 100px;
 }
 
 .phoneSpeaker {
@@ -50,8 +62,16 @@
   left: 15px;
   width: 270px;
   height: 285px;
-  padding: 20px;
   background-color: #2b2f36;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+}
+
+.phoneInner.padded {
+  padding: 20px;
+}
+
+.phoneInner.full {
+  height: 585px;
+  border-radius: 20px;
 }
