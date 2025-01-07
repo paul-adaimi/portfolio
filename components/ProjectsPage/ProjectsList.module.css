@@ -1,0 +1,22 @@
+.tabsContainer {
+  display: flex;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+}
+
+.tab {
+  padding: 10px;
+  border-right: 1px solid #333;
+  cursor: pointer;
+}
+
+.tab.selected {
+  background-color: #262626;
+}
+
+.title {
+  margin: 0;
+  font-family: Gugi;
+  font-size: 20px;
+  color: #ddd;
+}
