@@ -19,8 +19,11 @@
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflowing text */
   border-right: 2px solid #282c34; /* Simulate a cursor */
-  width: 0; /* Start with no width */
-  animation: typing 1.5s steps(30, end) forwards, blink 0.5s step-end 5 forwards;
+}
+
+.typing {
+  animation: typing 1.5s steps(30, end) forwards,
+    blink 0.5s step-end infinite forwards;
 }
 
 @keyframes typing {
@@ -29,6 +32,20 @@
   }
   to {
     width: 100%; /* Full width reveals the text */
+  }
+}
+
+.backspacing {
+  animation: backspace 1s steps(30, end) forwards,
+    blink 0.5s step-end infinite forwards;
+}
+
+@keyframes backspace {
+  from {
+    width: 100%; /* Start with full width */
+  }
+  to {
+    width: 0; /* Backspace to empty */
   }
 }
 

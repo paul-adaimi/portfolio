@@ -1,10 +1,27 @@
-// components/Layout.js
+import { useMemo } from "react";
 import Link from "next/link";
 import styles from "./Layout.module.css";
 import Head from "next/head";
 import Image from "next/image";
+import AnimatedTitle from "./AnimatedTitle";
+import { useRouter } from "next/router";
 
+// TODO: Add Title here, and make it erase and write
 const Layout = ({ children }) => {
+  const router = useRouter();
+  const currentPage = router.pathname;
+
+  const currentTitle = useMemo(() => {
+    switch (currentPage) {
+      case "/about":
+        return "About Me";
+      case "/projects":
+        return "My Projects";
+      default:
+        return "Paul Adaimi";
+    }
+  }, [currentPage]);
+
   return (
     <>
       <Head>
@@ -77,7 +94,14 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </header>
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.content}>
+          <div className={styles.titleContainer}>
+            <AnimatedTitle>{currentTitle}</AnimatedTitle>
+          </div>
+          {children}
+        </div>
+      </main>
       <footer className={styles.footer}>
         <p>
           &copy; {new Date().getFullYear()} Paul Adaimi. All Rights Reserved.

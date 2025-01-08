@@ -2,6 +2,7 @@ import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
 
 // TODO: Add writing effect
+// TODO: Add Effect to add/remove laptop phone
 export default function VSCode({ projects, selectedProject, handleTabClick }) {
   return (
     <div className={styles.window}>

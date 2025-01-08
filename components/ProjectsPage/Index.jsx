@@ -17,10 +17,7 @@ export default function Index({ projects }) {
   };
 
   return (
-    <div className={styles.content}>
-      <div className={styles.titleContainer}>
-        <AnimatedTitle>{"My Projects"}</AnimatedTitle>
-      </div>
+    <>
       <div className={styles.main}>
         <VSCode
           selectedProject={selectedProject}
@@ -44,6 +41,6 @@ export default function Index({ projects }) {
         )}
       </div>
       <p className={styles.footer}>{"</My Projects>"}</p>
-    </div>
+    </>
   );
 }
