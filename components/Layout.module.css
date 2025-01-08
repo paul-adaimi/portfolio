@@ -41,6 +41,7 @@
 
 .main {
   background-color: #e8e9eb;
+  flex: 1;
 }
 
 .footer {

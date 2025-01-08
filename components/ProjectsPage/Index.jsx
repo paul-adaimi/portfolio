@@ -32,8 +32,8 @@ export default function Index({ projects }) {
         ) : (
           <Phone isFull={true}>
             <Image
-              src="/images/bleumer.png"
-              alt="Bleumer"
+              src={selectedProject.imgSrc}
+              alt={selectedProject.title}
               width={300}
               height={400}
               style={{
@@ -42,11 +42,8 @@ export default function Index({ projects }) {
             />
           </Phone>
         )}
-
-        {/* <Phone isFull={true}>
-
-        </Phone> */}
       </div>
+      <p className={styles.footer}>{"</My Projects>"}</p>
     </div>
   );
 }

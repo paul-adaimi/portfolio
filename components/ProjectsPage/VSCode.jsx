@@ -1,6 +1,7 @@
 import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
 
+// TODO: Add writing effect
 export default function VSCode({ projects, selectedProject, handleTabClick }) {
   return (
     <div className={styles.window}>

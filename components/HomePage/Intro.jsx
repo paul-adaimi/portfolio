@@ -6,7 +6,7 @@ import styles from "./Intro.module.css";
 export default function Intro() {
   return (
     <div className={styles.content}>
-      <h1 className={styles.title}>{"</Paul Adaimi>"}</h1>
+      <p className={styles.title}>{"</Paul Adaimi>"}</p>
       <div className={styles.subContent}>
         <div className={styles.card}>
           <Phone isPadded={true}>

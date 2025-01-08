@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import Index from "../../components/ProjectsPage/Index";
+import Index from "../components/ProjectsPage/Index";
 
 export default function Projects() {
   const projects = useMemo(
@@ -29,6 +29,7 @@ export default function Projects() {
           </>
         ),
         type: "phone",
+        imgSrc: "/images/bleumer.png",
       },
       {
         title: "Book Me",
