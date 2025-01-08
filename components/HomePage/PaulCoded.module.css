@@ -1,19 +1,9 @@
-.tree {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.treeTop {
-  margin-top: 15px;
-  margin-bottom: 0;
-}
-
 .content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
+  overflow: scroll;
 }
 
 .contentLeft {

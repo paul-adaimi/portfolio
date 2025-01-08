@@ -1,11 +1,5 @@
-import PaulCoded from "../components/HomePage/PaulCoded";
-import Intro from "../components/HomePage/Intro";
+import Index from "../components/HomePage/Index";
 
 export default function Home() {
-  return (
-    <>
-      <PaulCoded />
-      <Intro />
-    </>
-  );
+  return <Index />;
 }

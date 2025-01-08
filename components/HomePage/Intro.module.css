@@ -1,7 +1,9 @@
 .content {
+  width: 100%;
   padding-left: 20px;
   padding-right: 20px;
   background-color: #d6d7d8;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +25,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  overflow: scroll;
 }
 
 .card {
