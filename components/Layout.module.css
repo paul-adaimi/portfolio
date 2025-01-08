@@ -26,17 +26,31 @@
   font-size: 50px;
 }
 
+.headerRight {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+}
+
 .nav {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
 }
 
 .link {
   color: white;
+  opacity: 0.5;
   font-family: "Gugi";
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.link:hover {
+  opacity: 1;
 }
 
 .main {
@@ -49,4 +63,13 @@
   padding: 1rem;
   background: #c4c4c5;
   color: #6c757d;
+}
+
+.contact {
+  padding-left: 20px;
+  border-left: #b2b7c1 solid 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
