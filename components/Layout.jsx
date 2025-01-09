@@ -6,7 +6,6 @@ import Image from "next/image";
 import AnimatedTitle from "./AnimatedTitle";
 import { useRouter } from "next/router";
 
-// TODO: Add Title here, and make it erase and write
 const Layout = ({ children }) => {
   const router = useRouter();
   const currentPage = router.pathname;

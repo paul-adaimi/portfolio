@@ -18,42 +18,26 @@
   font-family: Gugi;
   white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden; /* Hide overflowing text */
-  border-right: 2px solid #282c34; /* Simulate a cursor */
+  border-right: 2px solid transparent; /* Simulate a cursor */
+  white-space: pre;
 }
 
-.typing {
-  animation: typing 1.5s steps(30, end) forwards,
-    blink 0.5s step-end infinite forwards;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%; /* Full width reveals the text */
-  }
-}
-
-.backspacing {
-  animation: backspace 1s steps(30, end) forwards,
-    blink 0.5s step-end infinite forwards;
-}
-
-@keyframes backspace {
-  from {
-    width: 100%; /* Start with full width */
-  }
-  to {
-    width: 0; /* Backspace to empty */
-  }
+.blinking {
+  animation: blink 0.7s step-end infinite forwards;
 }
 
 @keyframes blink {
   50% {
-    border-right-color: transparent; /* Cursor blinks */
+    border-right-color: #282c34; /* Cursor blinks */
   }
   100% {
-    border-right-color: transparent; /* Make cursor invisible */
+    border-right-color: #282c34; /* Make cursor invisible */
   }
+}
+
+.staticTitle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
