@@ -1,4 +1,3 @@
-import AnimatedTitle from "../AnimatedTitle";
 import styles from "./Index.module.css";
 import Intro from "./Intro";
 import PaulCoded from "./PaulCoded";

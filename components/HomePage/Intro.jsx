@@ -2,11 +2,16 @@ import AnimatedText from "./AnimatedText";
 import Laptop from "..//Laptop";
 import Phone from "../Phone";
 import styles from "./Intro.module.css";
+import AnimatedTextCoordinated from "../AnimatedTextCoordinated";
 
 export default function Intro() {
   return (
     <div className={styles.content}>
-      <p className={styles.title}>{"</Paul Adaimi>"}</p>
+      <p className={styles.title}>
+        {"<"}
+        <AnimatedTextCoordinated id={4}>Paul Adaimi</AnimatedTextCoordinated>
+        {"/>"}
+      </p>
       <div className={styles.subContent}>
         <div className={styles.card}>
           <Phone isPadded={true}>

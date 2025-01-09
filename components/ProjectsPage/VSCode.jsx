@@ -1,5 +1,6 @@
 import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
+import AnimatedTextCoordinated from "../AnimatedTextCoordinated";
 
 // TODO: Add writing effect
 // TODO: Add Effect to add/remove laptop phone
@@ -23,14 +24,18 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
           <div className={styles.projectInfo}>
             <p className={styles.text}>
               <span className={styles.code}>{"<Type> "}</span>
-              {selectedProject.type === "phone"
-                ? "Mobile Application"
-                : "Web Application"}
+              <AnimatedTextCoordinated typingSpeed={50} id={0}>
+                {selectedProject.type === "phone"
+                  ? "Mobile Application"
+                  : "Web Application"}
+              </AnimatedTextCoordinated>
               <span className={styles.code}>{" </Type>"}</span>
             </p>
             <p className={styles.text}>
               <span className={styles.code}>{"<Year> "}</span>
-              {selectedProject.year}
+              <AnimatedTextCoordinated typingSpeed={50} id={1}>
+                {selectedProject.year}
+              </AnimatedTextCoordinated>
               <span className={styles.code}>{" </Year>"}</span>
             </p>
             {selectedProject.productionLinks && (
@@ -54,7 +59,12 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                           textDecoration: "underline",
                         }}
                       >
-                        {selectedProject.productionLinks[linkKey]}
+                        <AnimatedTextCoordinated
+                          typingSpeed={50}
+                          id={index + 2}
+                        >
+                          {selectedProject.productionLinks[linkKey]}
+                        </AnimatedTextCoordinated>
                       </a>
                       <span className={styles.code}>
                         {" </" + linkKey + ">"}
@@ -75,7 +85,18 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                   <span style={{ marginLeft: "20px" }} className={styles.code}>
                     {"<Tech-" + (index + 1) + "> "}
                   </span>
-                  {tech}
+                  <AnimatedTextCoordinated
+                    typingSpeed={50}
+                    id={
+                      2 +
+                      index +
+                      (selectedProject.productionLinks
+                        ? Object.keys(selectedProject.productionLinks).length
+                        : 0)
+                    }
+                  >
+                    {tech}
+                  </AnimatedTextCoordinated>
                   <span className={styles.code}>
                     {" </Tech-" + (index + 1) + ">"}
                   </span>
@@ -90,7 +111,18 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               </p>
               <div className={styles.description + " " + styles.text}>
                 <p className={styles.descriptionText}>
-                  {selectedProject.description}
+                  <AnimatedTextCoordinated
+                    typingSpeed={50}
+                    id={
+                      2 +
+                      selectedProject.technologies.length +
+                      (selectedProject.productionLinks
+                        ? Object.keys(selectedProject.productionLinks).length
+                        : 0)
+                    }
+                  >
+                    {selectedProject.description}
+                  </AnimatedTextCoordinated>
                 </p>
               </div>
               <p className={styles.text + " " + styles.code}>

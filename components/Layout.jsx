@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import AnimatedTitle from "./AnimatedTitle";
 import { useRouter } from "next/router";
+import { AnimatedTitleProvider } from "./AnimatedTitleProvider";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -94,12 +95,14 @@ const Layout = ({ children }) => {
         </div>
       </header>
       <main className={styles.main}>
-        <div className={styles.content}>
-          <div className={styles.titleContainer}>
-            <AnimatedTitle>{currentTitle}</AnimatedTitle>
+        <AnimatedTitleProvider>
+          <div className={styles.content}>
+            <div className={styles.titleContainer}>
+              <AnimatedTitle>{currentTitle}</AnimatedTitle>
+            </div>
+            {children}
           </div>
-          {children}
-        </div>
+        </AnimatedTitleProvider>
       </main>
       <footer className={styles.footer}>
         <p>

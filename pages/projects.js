@@ -1,7 +1,10 @@
 import { useMemo } from "react";
 import Index from "../components/ProjectsPage/Index";
+import { useAnimatedTitle } from "../components/AnimatedTitleProvider";
+import { AnimatedTextCoordinatorProvider } from "../components/AnimatedTextCoordinatorProvider";
 
 export default function Projects() {
+  const { isAnimating } = useAnimatedTitle();
   const projects = useMemo(
     () => [
       {
@@ -48,5 +51,9 @@ export default function Projects() {
     ],
     []
   );
-  return <Index projects={projects} />;
+  return (
+    <AnimatedTextCoordinatorProvider shouldStart={!isAnimating}>
+      <Index projects={projects} />
+    </AnimatedTextCoordinatorProvider>
+  );
 }

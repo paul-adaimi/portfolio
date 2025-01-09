@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./AnimatedTitle.module.css";
+import { useAnimatedTitle } from "./AnimatedTitleProvider";
 
 export default function AnimatedTitle({ children }) {
   const [displayText, setDisplayText] = useState(""); // Current visible text
-  const [isTyping, setIsTyping] = useState(false); // Animation state
+
+  const { isAnimating, setIsAnimating } = useAnimatedTitle();
 
   useEffect(() => {
     let timeout;
@@ -13,7 +15,7 @@ export default function AnimatedTitle({ children }) {
         setDisplayText(text.slice(0, index)); // Show next character
         timeout = setTimeout(() => typeText(text, index + 1), 150); // Typing speed
       } else {
-        setIsTyping(false); // Typing complete
+        setIsAnimating(false); // Typing complete
       }
     };
 
@@ -27,7 +29,7 @@ export default function AnimatedTitle({ children }) {
     };
 
     if (children !== displayText) {
-      setIsTyping(true);
+      setIsAnimating(true);
       eraseText(displayText); // Start erasing the current text
     }
 
@@ -39,7 +41,9 @@ export default function AnimatedTitle({ children }) {
       <p className={styles.title}>{"<"}</p>
       <h1
         aria-hidden="true"
-        className={`${styles.animatedTitle} ${isTyping ? styles.blinking : ""}`}
+        className={`${styles.animatedTitle} ${
+          isAnimating ? styles.blinking : ""
+        }`}
       >
         {displayText}
       </h1>

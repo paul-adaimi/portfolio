@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./PaulCoded.module.css";
+import AnimatedTextCoordinated from "../AnimatedTextCoordinated";
 
 export default function PaulCoded() {
   return (
@@ -13,7 +14,9 @@ export default function PaulCoded() {
             marginTop: 100,
           }}
         >
-          {"<Head>"}
+          {"<"}
+          <AnimatedTextCoordinated id={0}>Head</AnimatedTextCoordinated>
+          {">"}
         </p>
 
         <p
@@ -22,7 +25,9 @@ export default function PaulCoded() {
             marginTop: 170,
           }}
         >
-          {"<Body>"}
+          {"<"}
+          <AnimatedTextCoordinated id={2}>Body</AnimatedTextCoordinated>
+          {">"}
         </p>
       </div>
       <div className={styles.contentCenter}>
@@ -45,7 +50,9 @@ export default function PaulCoded() {
             marginLeft: -130,
           }}
         >
-          {"</Head>"}
+          {"</"}
+          <AnimatedTextCoordinated id={1}>Head</AnimatedTextCoordinated>
+          {">"}
         </p>
         <p
           className={styles.text}
@@ -54,7 +61,9 @@ export default function PaulCoded() {
             marginLeft: -10,
           }}
         >
-          {"</Body>"}
+          {"<"}
+          <AnimatedTextCoordinated id={3}>Body</AnimatedTextCoordinated>
+          {"/>"}
         </p>
       </div>
     </div>

@@ -1,19 +1,22 @@
 import { useState } from "react";
-import AnimatedTitle from "../AnimatedTitle";
 import styles from "./Index.module.css";
 import VSCode from "./VSCode";
 import Phone from "../Phone";
 import Laptop from "../Laptop";
 import Image from "next/image";
+import { useAnimatedTextCoordinator } from "../AnimatedTextCoordinatorProvider";
 
 export default function Index({ projects }) {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
+
+  const { setCurrentAnimatingId } = useAnimatedTextCoordinator();
 
   const handleTabClick = (project) => {
     if (selectedProject === project) {
       return;
     }
     setSelectedProject(project);
+    setCurrentAnimatingId(0);
   };
 
   return (
