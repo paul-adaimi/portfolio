@@ -1,4 +1,4 @@
-import AnimatedText from "./AnimatedText";
+import AnimatedTextScroll from "./AnimatedTextScroll";
 import Laptop from "..//Laptop";
 import Phone from "../Phone";
 import styles from "./Intro.module.css";
@@ -20,7 +20,7 @@ export default function Intro() {
                 marginTop: 18,
               }}
             >
-              <AnimatedText chunks={["$ Paul > "]}>
+              <AnimatedTextScroll chunks={["$ Paul > "]}>
                 {"$ Paul > "} cd Paul\ Adaimi\'s\ Portfolio/
                 <br />
                 <br />
@@ -41,13 +41,13 @@ export default function Intro() {
                 <br />
                 <br />
                 {"$ Paul > "}
-              </AnimatedText>
+              </AnimatedTextScroll>
             </div>
           </Phone>
         </div>
         <div className={styles.card}>
           <Laptop>
-            <AnimatedText chunks={["paul@adaimi.com > "]}>
+            <AnimatedTextScroll chunks={["paul@adaimi.com > "]}>
               {"paul@adaimi.com > "}cd Paul\ Adaimi\'s\ Portfolio/
               <br />
               <br />
@@ -71,7 +71,7 @@ export default function Intro() {
               <br />
               <br />
               {"paul@adaimi.com > "}
-            </AnimatedText>
+            </AnimatedTextScroll>
           </Laptop>
         </div>
       </div>

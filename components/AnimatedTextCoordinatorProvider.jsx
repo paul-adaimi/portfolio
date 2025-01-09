@@ -7,6 +7,7 @@ export const AnimatedTextCoordinatorProvider = ({
   shouldStart = true,
 }) => {
   const [currentAnimatingId, setCurrentAnimatingId] = useState(-1);
+  const [forceRestart, setForceRestart] = useState(false);
 
   useEffect(() => {
     if (shouldStart) {
@@ -14,13 +15,14 @@ export const AnimatedTextCoordinatorProvider = ({
     } else {
       setCurrentAnimatingId(-1);
     }
-  }, [shouldStart]);
+  }, [shouldStart, forceRestart]);
 
   return (
     <AnimatedTextCoordinatorContext.Provider
       value={{
         currentAnimatingId,
         setCurrentAnimatingId,
+        setForceRestart,
       }}
     >
       {children}

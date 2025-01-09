@@ -1,5 +1,5 @@
 import { useEffect, useState, cloneElement } from "react";
-import styles from "./AnimatedText.module.css";
+import styles from "./AnimatedTextScroll.module.css";
 
 const AnimatedText = ({ children, chunks = [], startPercentage = 0.3 }) => {
   const [visibleLength, setVisibleLength] = useState(0);

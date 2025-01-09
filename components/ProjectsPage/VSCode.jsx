@@ -60,7 +60,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         }}
                       >
                         <AnimatedTextCoordinated
-                          typingSpeed={50}
+                          typingSpeed={20}
                           id={index + 2}
                         >
                           {selectedProject.productionLinks[linkKey]}
@@ -112,7 +112,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               <div className={styles.description + " " + styles.text}>
                 <p className={styles.descriptionText}>
                   <AnimatedTextCoordinated
-                    typingSpeed={50}
+                    typingSpeed={10}
                     id={
                       2 +
                       selectedProject.technologies.length +

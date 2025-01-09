@@ -9,14 +9,16 @@ import { useAnimatedTextCoordinator } from "../AnimatedTextCoordinatorProvider";
 export default function Index({ projects }) {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-  const { setCurrentAnimatingId } = useAnimatedTextCoordinator();
+  const { setCurrentAnimatingId, setForceRestart } =
+    useAnimatedTextCoordinator();
 
   const handleTabClick = (project) => {
     if (selectedProject === project) {
       return;
     }
     setSelectedProject(project);
-    setCurrentAnimatingId(0);
+    setCurrentAnimatingId(-1);
+    setForceRestart((prev) => !prev);
   };
 
   return (

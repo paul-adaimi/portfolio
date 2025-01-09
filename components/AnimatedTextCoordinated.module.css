@@ -1,6 +1,7 @@
 .text {
   border-right: 2px solid transparent; /* Simulate a cursor */
   white-space: pre;
+  text-wrap: wrap;
 }
 
 .blinking {
@@ -9,9 +10,9 @@
 
 @keyframes blink {
   50% {
-    border-right-color: #6e737e; /* Cursor blinks */
+    border-right-color: #94969a; /* Cursor blinks */
   }
   100% {
-    border-right-color: #6e737e; /* Make cursor invisible */
+    border-right-color: #94969a; /* Make cursor invisible */
   }
 }
