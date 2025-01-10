@@ -1,11 +1,16 @@
 import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
+import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
 
 // TODO: Add Effect to add/remove laptop phone
 export default function VSCode({ projects, selectedProject, handleTabClick }) {
+  const { shouldAnimateOut } = useAnimatedTitle();
+
   return (
-    <div className={styles.window}>
+    <div
+      className={`${styles.window} ${shouldAnimateOut && styles.animateOut}`}
+    >
       <div className={styles.windowTop}>
         <div className={styles.button + " " + styles.close}></div>
         <div className={styles.button + " " + styles.minimize}></div>

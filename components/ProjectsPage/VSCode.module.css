@@ -6,7 +6,29 @@
   min-width: 800px;
   background-color: #191919;
   border-radius: 10px;
-  transition: all 0.5s ease;
+  animation: fadeInWindow 1.5s ease-out forwards;
+}
+
+@keyframes fadeInWindow {
+  from {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.window.animateOut {
+  animation: fadeOutWindow 1s ease-out forwards;
+}
+
+@keyframes fadeOutWindow {
+  to {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
 }
 
 .windowTop {
