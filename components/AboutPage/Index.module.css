@@ -28,6 +28,60 @@
   position: relative;
 }
 
+.contentSideLeft {
+  animation: fadeInLeft 1.5s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contentSideLeft.animateOut {
+  animation: fadeOutLeft 1s ease-out forwards;
+}
+
+@keyframes fadeOutLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+}
+
+.contentSideRight {
+  animation: fadeInRight 1.5s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contentSideRight.animateOut {
+  animation: fadeOutRight 1s ease-out forwards;
+}
+
+@keyframes fadeOutRight {
+  to {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+}
+
 .contentCenter {
   display: flex;
   flex-direction: column;
@@ -47,15 +101,27 @@
 .imagePaul {
   min-width: 400px;
   min-height: 400px;
-
-  opacity: 0; /* Start invisible */
-  transform: translateY(200px); /* Start slightly below */
-  animation: fadeIn 1s ease-out forwards; /* Animate to visible */
+  animation: fadeInImage 1.5s ease-out forwards; /* Animate to visible */
 }
 
-@keyframes fadeIn {
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.imagePaul.animateOut {
+  animation: fadeOutImage 1s ease-out forwards;
+}
+
+@keyframes fadeOutImage {
+  to {
+    opacity: 0;
+    transform: translateY(200px);
   }
 }

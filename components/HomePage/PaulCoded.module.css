@@ -36,7 +36,7 @@
 .imagePaul {
   min-width: 400px;
   min-height: 400px;
-  animation: fadeIn 1s ease-out forwards; /* Animate to visible */
+  animation: fadeIn 1.5s ease-out forwards; /* Animate to visible */
 }
 
 @keyframes fadeIn {
