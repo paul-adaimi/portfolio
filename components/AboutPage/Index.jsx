@@ -1,6 +1,10 @@
-import AnimatedTitle from "../AnimatedTitle";
 import styles from "./Index.module.css";
+import PaulCoded from "./PaulCoded";
 
 export default function Index() {
-  return <div></div>;
+  return (
+    <div className={styles.main}>
+      <PaulCoded />
+    </div>
+  );
 }

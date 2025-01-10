@@ -1,0 +1,18 @@
+.text {
+  border-right: 2px solid transparent; /* Simulate a cursor */
+  white-space: pre;
+  text-wrap: wrap;
+}
+
+.blinking {
+  animation: blink 0.5s step-end infinite forwards;
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: #94969a; /* Cursor blinks */
+  }
+  100% {
+    border-right-color: #94969a; /* Make cursor invisible */
+  }
+}

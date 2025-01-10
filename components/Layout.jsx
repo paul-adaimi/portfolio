@@ -3,9 +3,9 @@ import Link from "next/link";
 import styles from "./Layout.module.css";
 import Head from "next/head";
 import Image from "next/image";
-import AnimatedTitle from "./AnimatedTitle";
+import AnimatedTitle from "./Global/AnimatedTitle";
 import { useRouter } from "next/router";
-import { AnimatedTitleProvider } from "./AnimatedTitleProvider";
+import { AnimatedTitleProvider } from "./Global/AnimatedTitleProvider";
 
 const Layout = ({ children }) => {
   const router = useRouter();

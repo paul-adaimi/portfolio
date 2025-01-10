@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./PaulCoded.module.css";
-import AnimatedTextCoordinated from "../AnimatedTextCoordinated";
+import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
 export default function PaulCoded() {
   return (
@@ -36,10 +36,7 @@ export default function PaulCoded() {
           alt="Paul Adaimi"
           width={400}
           height={400}
-          style={{
-            minWidth: "400px",
-            minHeight: "400px",
-          }}
+          className={styles.imagePaul}
         />
       </div>
       <div className={styles.contentRight}>

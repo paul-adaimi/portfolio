@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import Index from "../components/ProjectsPage/Index";
-import { useAnimatedTitle } from "../components/AnimatedTitleProvider";
-import { AnimatedTextCoordinatorProvider } from "../components/AnimatedTextCoordinatorProvider";
+import { useAnimatedTitle } from "../components/Global/AnimatedTitleProvider";
+import { AnimatedTextCoordinatorProvider } from "../components/Global/AnimatedTextCoordinatorProvider";
 
 export default function Projects() {
   const { isAnimating } = useAnimatedTitle();

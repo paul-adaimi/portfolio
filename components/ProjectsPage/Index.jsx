@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styles from "./Index.module.css";
 import VSCode from "./VSCode";
-import Phone from "../Phone";
-import Laptop from "../Laptop";
+import Phone from "../Global/Phone";
+import Laptop from "../Global/Laptop";
 import Image from "next/image";
-import { useAnimatedTextCoordinator } from "../AnimatedTextCoordinatorProvider";
+import { useAnimatedTextCoordinator } from "../Global/AnimatedTextCoordinatorProvider";
 
 export default function Index({ projects }) {
   const [selectedProject, setSelectedProject] = useState(projects[0]);

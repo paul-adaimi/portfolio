@@ -4,33 +4,37 @@
   justify-content: space-between;
   width: 100%;
   overflow: scroll;
+  padding: 20px;
+  padding-bottom: 0;
 }
 
-.contentLeft {
+.contentSide {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  width: 50%;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #d6d7d8;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 .contentCenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.contentRight {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  padding: 20px;
+  padding-bottom: 0;
 }
 
 .text {
   font-family: "Gugi";
-  font-size: 35px;
+  font-size: 45px;
   color: #282c34;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
 .imagePaul {

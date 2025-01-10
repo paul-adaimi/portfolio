@@ -1,8 +1,8 @@
 import AnimatedTextScroll from "./AnimatedTextScroll";
-import Laptop from "..//Laptop";
-import Phone from "../Phone";
+import Laptop from "../Global/Laptop";
+import Phone from "../Global/Phone";
 import styles from "./Intro.module.css";
-import AnimatedTextCoordinated from "../AnimatedTextCoordinated";
+import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
 export default function Intro() {
   return (

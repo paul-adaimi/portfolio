@@ -1,0 +1,104 @@
+.accordionItem {
+  transition: margin 0.3s;
+}
+
+.accordionItem.selected {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.accordionTitle {
+  padding: 10px;
+  background-color: #282c34;
+  cursor: pointer;
+  color: #d6d7d8;
+  font-family: Gugi;
+  font-size: 17px;
+  border-bottom: 1px solid #6f7279;
+  border-top: 1px solid #6f7279;
+  transition: border-radius 0.5s;
+}
+
+.accordionTitle.first {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: none;
+}
+
+.accordionTitle.last {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom: none;
+}
+
+.accordionTitle.selected {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: none;
+  border-top: none;
+}
+
+.accordionDescription {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #282c34;
+  overflow: hidden;
+  max-height: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+  font-size: 0;
+  color: #282c34;
+}
+
+@keyframes fadeIn {
+  99% {
+    color: #282c34;
+  }
+
+  to {
+    max-height: 10000px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: white;
+  }
+}
+
+.accordionDescription.fadeOut {
+  padding: 10px;
+  animation: fadeOut 0.3s ease-out forwards;
+  font-size: 15px;
+  max-height: 10000px;
+}
+
+@keyframes fadeOut {
+  to {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 0;
+    max-height: 0;
+  }
+}
+
+.accordionClosingTag {
+  margin-top: 20px;
+  background-color: #282c34;
+  cursor: pointer;
+  color: #d6d7d8;
+  font-family: Gugi;
+  font-size: 17px;
+}
+
+.text {
+  font-family: Gugi;
+  margin: 0;
+}
+
+.descriptionText {
+  font-family: Gugi;
+  margin: 0;
+  margin-left: 10px;
+}
