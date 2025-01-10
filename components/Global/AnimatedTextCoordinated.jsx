@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./AnimatedTextCoordinated.module.css";
 import { useAnimatedTextCoordinator } from "./AnimatedTextCoordinatorProvider";
 
+// TODO: Fix Like Animated Title
 export default function AnimatedTextCoordinated({
   children,
   id,
