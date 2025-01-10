@@ -1,18 +1,18 @@
 import Image from "next/image";
 import styles from "./PaulCoded.module.css";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
+import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
 
 export default function PaulCoded() {
+  const { shouldAnimateOut } = useAnimatedTitle();
+
   return (
     <div className={styles.content}>
       <div className={styles.contentLeft}>
         <p
-          className={styles.text}
-          style={{
-            position: "relative",
-            right: -120,
-            marginTop: 100,
-          }}
+          className={`${styles.text} ${styles.headOpenTag} ${
+            shouldAnimateOut && styles.animateOut
+          }`}
         >
           {"<"}
           <AnimatedTextCoordinated id={0}>Head</AnimatedTextCoordinated>
@@ -20,10 +20,9 @@ export default function PaulCoded() {
         </p>
 
         <p
-          className={styles.text}
-          style={{
-            marginTop: 170,
-          }}
+          className={`${styles.text} ${styles.bodyOpenTag} ${
+            shouldAnimateOut && styles.animateOut
+          }`}
         >
           {"<"}
           <AnimatedTextCoordinated id={2}>Body</AnimatedTextCoordinated>
@@ -36,27 +35,25 @@ export default function PaulCoded() {
           alt="Paul Adaimi"
           width={400}
           height={400}
-          className={styles.imagePaul}
+          className={`${styles.imagePaul} ${
+            shouldAnimateOut && styles.animateOut
+          }`}
         />
       </div>
       <div className={styles.contentRight}>
         <p
-          className={styles.text}
-          style={{
-            marginTop: 100,
-            marginLeft: -130,
-          }}
+          className={`${styles.text} ${styles.headCloseTag} ${
+            shouldAnimateOut && styles.animateOut
+          }`}
         >
           {"</"}
           <AnimatedTextCoordinated id={1}>Head</AnimatedTextCoordinated>
           {">"}
         </p>
         <p
-          className={styles.text}
-          style={{
-            marginTop: 170,
-            marginLeft: -10,
-          }}
+          className={`${styles.text} ${styles.bodyCloseTag} ${
+            shouldAnimateOut && styles.animateOut
+          }`}
         >
           {"<"}
           <AnimatedTextCoordinated id={3}>Body</AnimatedTextCoordinated>

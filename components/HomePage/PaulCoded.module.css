@@ -36,15 +36,146 @@
 .imagePaul {
   min-width: 400px;
   min-height: 400px;
-
-  opacity: 0; /* Start invisible */
-  transform: translateY(200px); /* Start slightly below */
   animation: fadeIn 1s ease-out forwards; /* Animate to visible */
 }
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.imagePaul.animateOut {
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+.headOpenTag {
+  position: relative;
+  right: -120px;
+  margin-top: 100px;
+  opacity: 1;
+  animation: headOpenTagAnimationIn 1.5s ease-in-out forwards;
+}
+
+@keyframes headOpenTagAnimationIn {
+  from {
+    opacity: 0;
+    right: 400px;
+  }
+
+  to {
+    opacity: 1;
+    right: -120px;
+  }
+}
+
+.headOpenTag.animateOut {
+  animation: headOpenTagAnimationOut 1s ease-in-out forwards;
+}
+
+@keyframes headOpenTagAnimationOut {
+  to {
+    opacity: 0;
+    right: 400px;
+  }
+}
+
+.headCloseTag {
+  position: relative;
+  left: -130px;
+  margin-top: 100px;
+  animation: headCloseTagAnimationIn 1.5s ease-in-out forwards;
+}
+
+@keyframes headCloseTagAnimationIn {
+  from {
+    opacity: 0;
+    left: 400px;
+  }
+  to {
+    opacity: 1;
+    left: -130px;
+  }
+}
+
+.headCloseTag.animateOut {
+  animation: headCloseTagAnimationOut 1s ease-in-out forwards;
+}
+
+@keyframes headCloseTagAnimationOut {
+  to {
+    opacity: 0;
+    left: 400px;
+  }
+}
+
+.bodyOpenTag {
+  position: relative;
+  margin-top: 170px;
+  right: 0;
+  animation: bodyOpenTagAnimationIn 1.5s ease-in-out forwards;
+}
+
+@keyframes bodyOpenTagAnimationIn {
+  from {
+    opacity: 0;
+    right: 400px;
+  }
+
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+.bodyOpenTag.animateOut {
+  animation: bodyOpenTagAnimationOut 1s ease-in-out forwards;
+}
+
+@keyframes bodyOpenTagAnimationOut {
+  to {
+    opacity: 0;
+    right: 400px;
+  }
+}
+
+.bodyCloseTag {
+  position: relative;
+  left: -10px;
+  margin-top: 170px;
+  animation: bodyCloseTagAnimationIn 1.5s ease-in-out forwards;
+}
+
+@keyframes bodyCloseTagAnimationIn {
+  from {
+    opacity: 0;
+    left: 400px;
+  }
+  to {
+    opacity: 1;
+    left: -10px;
+  }
+}
+
+.bodyCloseTag.animateOut {
+  animation: bodyCloseTagAnimationOut 1s ease-in-out forwards;
+}
+
+@keyframes bodyCloseTagAnimationOut {
+  to {
+    opacity: 0;
+    left: 400px;
   }
 }
