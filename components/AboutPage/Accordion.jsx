@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Accordion.module.css";
 import AccordionItem from "./AccordionItem";
 
-export default function Accordion({ items }) {
+export default function Accordion({ items, coordOffset }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (index) => {
@@ -13,6 +13,7 @@ export default function Accordion({ items }) {
     <div className={styles.accordion}>
       {items.map((item, index) => (
         <AccordionItem
+          coordinationId={index + coordOffset}
           item={item}
           index={index}
           isOpen={index === openIndex}

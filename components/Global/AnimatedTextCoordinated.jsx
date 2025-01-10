@@ -5,7 +5,7 @@ import { useAnimatedTextCoordinator } from "./AnimatedTextCoordinatorProvider";
 export default function AnimatedTextCoordinated({
   children,
   id,
-  typingSpeed = 100,
+  typingSpeed = 50,
 }) {
   const [displayText, setDisplayText] = useState("");
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./AccordionItem.module.css";
-import AnimatedTextIndependant from "./AnimatedTextIndependant";
+import AnimatedTextIndependant from "../Global/AnimatedTextIndependant";
+import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
 export default function AccordionItem({
   item,
@@ -9,6 +10,7 @@ export default function AccordionItem({
   isLast,
   isOpen,
   handleToggle,
+  coordinationId,
 }) {
   const [isCurrentlyOpen, setIsCurrentlyOpen] = useState(isOpen);
   const [shouldType, setShouldType] = useState(false);
@@ -43,7 +45,13 @@ export default function AccordionItem({
           isLast && styles.last
         } ${isOpen && styles.selected}`}
       >
-        <p className={styles.text}>{`<${item.title}>`}</p>
+        <p className={styles.text}>
+          {"<"}
+          <AnimatedTextCoordinated typingSpeed={20} id={coordinationId}>
+            {item.title}
+          </AnimatedTextCoordinated>
+          {">"}
+        </p>
       </div>
       {isCurrentlyOpen && (
         <div
@@ -51,17 +59,27 @@ export default function AccordionItem({
             isFirst && styles.first
           } ${isLast && styles.last} ${!isOpen && styles.fadeOut}`}
         >
-          <p className={styles.descriptionText}>
-            <AnimatedTextIndependant shouldType={shouldType}>
+          <p
+            className={`${styles.text} ${styles.descriptionText} ${
+              !isOpen && styles.fadeOut
+            }`}
+          >
+            <AnimatedTextIndependant typingSpeed={20} shouldType={shouldType}>
               {item.description}
             </AnimatedTextIndependant>
           </p>
 
           <div
             onClick={() => handleToggle(index)}
-            className={`${styles.accordionClosingTag}`}
+            className={`${styles.accordionClosingTag} ${
+              !isOpen && styles.fadeOut
+            }`}
           >
-            <p className={styles.text}>{`</${item.title}>`}</p>
+            <p
+              className={`${styles.text} ${styles.closingTagText} ${
+                styles.fadeIn
+              } ${!isOpen && styles.fadeOut}`}
+            >{`</${item.title}>`}</p>
           </div>
         </div>
       )}

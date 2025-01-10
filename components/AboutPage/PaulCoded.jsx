@@ -1,18 +1,22 @@
 import Image from "next/image";
 import styles from "./PaulCoded.module.css";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
-import Accordion from "../Global/Accordion";
+import Accordion from "./Accordion";
 
+// TODO: Change File Name
 export default function PaulCoded() {
   return (
     <div className={styles.content}>
       <div className={styles.contentSide}>
         <p className={styles.text}>
           {"<"}
-          <AnimatedTextCoordinated id={0}>My Education</AnimatedTextCoordinated>
+          <AnimatedTextCoordinated typingSpeed={50} id={0}>
+            My Education
+          </AnimatedTextCoordinated>
           {">"}
         </p>
         <Accordion
+          coordOffset={2}
           items={[
             {
               title: "American University of Beirut",
@@ -20,7 +24,9 @@ export default function PaulCoded() {
             },
             {
               title: "Northeastern University",
-              description: "Master of Science in Computer Science",
+              description: `Master of Science in Computer Science Master of Science in Computer Science Master of Science in Computer Science
+
+Master of Science in Computer Science Master of Science in Computer Science Master of Science in Computer Science`,
             },
             {
               title: "Harvard University",
@@ -41,7 +47,7 @@ export default function PaulCoded() {
       <div className={styles.contentSide}>
         <p className={styles.text}>
           {"<"}
-          <AnimatedTextCoordinated id={1}>
+          <AnimatedTextCoordinated typingSpeed={50} id={1}>
             My Experience
           </AnimatedTextCoordinated>
           {">"}

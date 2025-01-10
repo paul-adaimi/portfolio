@@ -1,5 +1,5 @@
 .accordionItem {
-  transition: margin 0.3s;
+  transition: margin 0.5s;
 }
 
 .accordionItem.selected {
@@ -50,36 +50,32 @@
   max-height: 0;
   animation: fadeIn 0.5s ease-in forwards;
   font-size: 0;
-  color: #282c34;
+  color: white;
 }
 
 @keyframes fadeIn {
-  99% {
-    color: #282c34;
-  }
-
   to {
     max-height: 10000px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    color: white;
   }
 }
 
 .accordionDescription.fadeOut {
   padding: 10px;
-  animation: fadeOut 0.3s ease-out forwards;
-  font-size: 15px;
+  animation: fadeOutDescription 0.5s ease-out forwards;
   max-height: 10000px;
+  font-size: 15px;
+  color: #282c34;
 }
 
-@keyframes fadeOut {
+@keyframes fadeOutDescription {
   to {
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 0;
     max-height: 0;
+    font-size: 0;
   }
 }
 
@@ -92,13 +88,43 @@
   font-size: 17px;
 }
 
+.accordionClosingTag.fadeOut {
+  animation: fadeOutTag 0.5s ease-out forwards;
+}
+
+@keyframes fadeOutTag {
+  to {
+    margin: 0;
+  }
+}
+
 .text {
   font-family: Gugi;
   margin: 0;
 }
 
+.closingTagText.fadeIn {
+  font-size: 0;
+  animation: fadeInText 0.5s ease-out forwards;
+}
+
+@keyframes fadeInText {
+  to {
+    font-size: 17px;
+  }
+}
+
+.closingTagText.fadeOut {
+  animation: fadeOutText 0.5s ease-out forwards;
+  color: #282c34;
+}
+
+@keyframes fadeOutText {
+  to {
+    font-size: 0;
+  }
+}
+
 .descriptionText {
-  font-family: Gugi;
-  margin: 0;
-  margin-left: 10px;
+  margin-left: 18px;
 }
