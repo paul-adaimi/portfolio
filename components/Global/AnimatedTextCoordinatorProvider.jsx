@@ -8,14 +8,15 @@ export const AnimatedTextCoordinatorProvider = ({
 }) => {
   const [currentAnimatingId, setCurrentAnimatingId] = useState(-1);
   const [forceRestart, setForceRestart] = useState(false);
+  const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    if (shouldStart) {
+    if ((shouldStart && !isDone) || forceRestart) {
       setCurrentAnimatingId(0);
-    } else {
-      setCurrentAnimatingId(-1);
+      setIsDone(true);
+      setForceRestart(false);
     }
-  }, [shouldStart, forceRestart]);
+  }, [shouldStart, forceRestart, isDone]);
 
   return (
     <AnimatedTextCoordinatorContext.Provider

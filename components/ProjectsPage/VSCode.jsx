@@ -2,7 +2,6 @@ import styles from "./VSCode.module.css";
 import ProjectsList from "./ProjectsList";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
-// TODO: Add writing effect
 // TODO: Add Effect to add/remove laptop phone
 export default function VSCode({ projects, selectedProject, handleTabClick }) {
   return (

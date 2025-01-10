@@ -5,7 +5,10 @@ import Head from "next/head";
 import Image from "next/image";
 import AnimatedTitle from "./Global/AnimatedTitle";
 import { useRouter } from "next/router";
-import { AnimatedTitleProvider } from "./Global/AnimatedTitleProvider";
+import {
+  AnimatedTitleProvider,
+  KeepMounted,
+} from "./Global/AnimatedTitleProvider";
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -100,7 +103,7 @@ const Layout = ({ children }) => {
             <div className={styles.titleContainer}>
               <AnimatedTitle>{currentTitle}</AnimatedTitle>
             </div>
-            {children}
+            <KeepMounted>{children}</KeepMounted>
           </div>
         </AnimatedTitleProvider>
       </main>

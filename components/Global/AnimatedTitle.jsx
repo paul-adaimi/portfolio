@@ -7,7 +7,7 @@ export default function AnimatedTitle({ children }) {
   const [previousChildren, setPreviousChildren] = useState(null);
   const timeout = useRef(null);
 
-  const { isAnimating, setIsAnimating } = useAnimatedTitle();
+  const { isAnimating, setIsErasing, setIsWriting } = useAnimatedTitle();
 
   const typeText = useCallback(
     (index = 0) => {
@@ -17,10 +17,10 @@ export default function AnimatedTitle({ children }) {
         setDisplayText(text.slice(0, index)); // Show next character
         timeout.current = setTimeout(() => typeText(index + 1), 150); // Typing speed
       } else {
-        setIsAnimating(false); // Typing complete
+        setIsWriting(false);
       }
     },
-    [children]
+    [children, setIsWriting]
   );
 
   const eraseText = useCallback(
@@ -29,10 +29,12 @@ export default function AnimatedTitle({ children }) {
         setDisplayText(displayText.slice(0, index)); // Remove last character
         timeout.current = setTimeout(() => eraseText(index - 1), 75); // Erasing speed
       } else {
+        setIsWriting(true);
+        setIsErasing(false);
         typeText(); // Start typing new text
       }
     },
-    [displayText, typeText]
+    [displayText, typeText, setIsWriting, setIsErasing]
   );
 
   useEffect(() => {
@@ -43,11 +45,11 @@ export default function AnimatedTitle({ children }) {
 
   useEffect(() => {
     if (children !== previousChildren) {
-      setIsAnimating(true);
       clearTimeout(timeout.current); // Clear any existing timeout
+      setIsErasing(true);
       eraseText(); // Start erasing the current text
     }
-  }, [children, previousChildren, eraseText, setIsAnimating]);
+  }, [children, previousChildren, eraseText, setIsErasing]);
 
   return (
     <div className={styles.titleContainer}>

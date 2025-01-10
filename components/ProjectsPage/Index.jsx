@@ -18,7 +18,7 @@ export default function Index({ projects }) {
     }
     setSelectedProject(project);
     setCurrentAnimatingId(-1);
-    setForceRestart((prev) => !prev);
+    setForceRestart(true);
   };
 
   return (
