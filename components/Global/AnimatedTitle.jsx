@@ -1,40 +1,53 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import styles from "./AnimatedTitle.module.css";
 import { useAnimatedTitle } from "./AnimatedTitleProvider";
 
 export default function AnimatedTitle({ children }) {
   const [displayText, setDisplayText] = useState(""); // Current visible text
+  const [previousChildren, setPreviousChildren] = useState(null);
+  const timeout = useRef(null);
 
   const { isAnimating, setIsAnimating } = useAnimatedTitle();
 
-  useEffect(() => {
-    let timeout;
+  const typeText = useCallback(
+    (index = 0) => {
+      const text = children;
 
-    const typeText = (text, index = 0) => {
       if (index <= text.length) {
         setDisplayText(text.slice(0, index)); // Show next character
-        timeout = setTimeout(() => typeText(text, index + 1), 150); // Typing speed
+        timeout.current = setTimeout(() => typeText(index + 1), 150); // Typing speed
       } else {
         setIsAnimating(false); // Typing complete
       }
-    };
+    },
+    [children]
+  );
 
-    const eraseText = (text, index = text.length) => {
+  const eraseText = useCallback(
+    (index = displayText.length) => {
       if (index >= 0) {
-        setDisplayText(text.slice(0, index)); // Remove last character
-        timeout = setTimeout(() => eraseText(text, index - 1), 75); // Erasing speed
+        setDisplayText(displayText.slice(0, index)); // Remove last character
+        timeout.current = setTimeout(() => eraseText(index - 1), 75); // Erasing speed
       } else {
-        typeText(children); // Start typing new text
+        typeText(); // Start typing new text
       }
-    };
+    },
+    [displayText, typeText]
+  );
 
-    if (children !== displayText) {
-      setIsAnimating(true);
-      eraseText(displayText); // Start erasing the current text
+  useEffect(() => {
+    if (previousChildren !== children) {
+      setPreviousChildren(children); // Update the state with the current children
     }
+  }, [children, previousChildren]);
 
-    return () => clearTimeout(timeout); // Cleanup timeout
-  }, [children]);
+  useEffect(() => {
+    if (children !== previousChildren) {
+      setIsAnimating(true);
+      clearTimeout(timeout.current); // Clear any existing timeout
+      eraseText(); // Start erasing the current text
+    }
+  }, [children, previousChildren, eraseText, setIsAnimating]);
 
   return (
     <div className={styles.titleContainer}>
