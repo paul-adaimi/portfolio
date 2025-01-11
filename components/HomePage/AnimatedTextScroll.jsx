@@ -1,7 +1,11 @@
-import { useEffect, useState, cloneElement } from "react";
+import React, { useEffect, useState, cloneElement } from "react";
 import styles from "./AnimatedTextScroll.module.css";
 
-const AnimatedText = ({ children, chunks = [], startPercentage = 0.3 }) => {
+const AnimatedTextScroll = ({
+  children,
+  chunks = [],
+  startPercentage = 0.3,
+}) => {
   const [visibleLength, setVisibleLength] = useState(0);
 
   // Function to calculate the total length, treating chunks as single units
@@ -60,14 +64,15 @@ const AnimatedText = ({ children, chunks = [], startPercentage = 0.3 }) => {
         if (remaining > 0) {
           const visibleContent = getVisibleContent(child, remaining);
           remaining -= childLength;
-          return visibleContent;
+
+          // Add key to the returned element
+          return <React.Fragment key={index}>{visibleContent}</React.Fragment>;
         }
         return null;
       });
     }
 
     if (typeof children === "object" && children !== null) {
-      const childLength = getTotalLength(children.props.children);
       if (visibleLength > 0) {
         const visibleContent = getVisibleContent(
           children.props.children,
@@ -109,4 +114,4 @@ const AnimatedText = ({ children, chunks = [], startPercentage = 0.3 }) => {
   );
 };
 
-export default AnimatedText;
+export default AnimatedTextScroll;
