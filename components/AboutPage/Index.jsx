@@ -16,14 +16,25 @@ export default function Index({ data }) {
             shouldAnimateOut && styles.animateOut
           }`}
         >
-          <p className={styles.text}>
-            {"<"}
-            <AnimatedTextCoordinated typingSpeed={50} id={0}>
-              My Education
-            </AnimatedTextCoordinated>
-            {">"}
-          </p>
-          <Accordion coordOffset={2} items={data.education} />
+          <div className={styles.contentSideTop}>
+            <p className={styles.text}>
+              {"<"}
+              <AnimatedTextCoordinated id={0}>
+                My Education
+              </AnimatedTextCoordinated>
+              {">"}
+            </p>
+            <Accordion coordOffset={2} items={data.education} />
+          </div>
+          <div className={styles.contentSideBottom}>
+            <p className={styles.text}>
+              {"</"}
+              <AnimatedTextCoordinated id={2 + data.education.length}>
+                My Education
+              </AnimatedTextCoordinated>
+              {">"}
+            </p>
+          </div>
         </div>
         <div className={styles.contentCenter}>
           <Image
@@ -41,20 +52,33 @@ export default function Index({ data }) {
             shouldAnimateOut && styles.animateOut
           }`}
         >
-          <p className={styles.text}>
-            {"<"}
-            <AnimatedTextCoordinated typingSpeed={50} id={1}>
-              My Experience
-            </AnimatedTextCoordinated>
-            {">"}
-          </p>
-          <Accordion
-            coordOffset={2 + data.education.length}
-            items={data.experience}
-          />
+          <div className={styles.contentSideTop}>
+            <p className={styles.text}>
+              {"<"}
+              <AnimatedTextCoordinated id={1}>
+                My Experience
+              </AnimatedTextCoordinated>
+              {">"}
+            </p>
+            <Accordion
+              coordOffset={3 + data.education.length}
+              items={data.experience}
+            />
+          </div>
+          <div className={styles.contentSideBottom}>
+            <p className={styles.text}>
+              {"</"}
+              <AnimatedTextCoordinated
+                id={3 + data.education.length + data.experience.length}
+              >
+                My Experience
+              </AnimatedTextCoordinated>
+              {">"}
+            </p>
+          </div>
         </div>
       </div>
-      <SubSection />
+      <SubSection offset={4 + data.education.length + data.experience.length} />
     </div>
   );
 }

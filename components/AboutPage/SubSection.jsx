@@ -1,13 +1,16 @@
 import styles from "./SubSection.module.css";
 import Image from "next/image";
+import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
 // TODO: Update CV and add it here
-export default function SubSection() {
+export default function SubSection({ offset }) {
   return (
     <div className={styles.content}>
       <p className={styles.title}>
         {"<"}
-        About Me
+        <AnimatedTextCoordinated id={offset}>
+          Paul Adaimi
+        </AnimatedTextCoordinated>
         {"/>"}
       </p>
       <div className={styles.subContent}>
@@ -17,7 +20,13 @@ export default function SubSection() {
           rel="noopener noreferrer"
           className={styles.card}
         >
-          <p className={styles.cardTitle}>{"<Github>"}</p>
+          <p className={styles.cardTitle}>
+            {"<"}
+            <AnimatedTextCoordinated id={offset + 1}>
+              Github
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
           <div className={styles.imageContainer}>
             <Image
               src="svg/github-square-dark.svg"
@@ -27,7 +36,13 @@ export default function SubSection() {
               height={90}
             />
           </div>
-          <p className={styles.cardTitle}>{"</Github>"}</p>
+          <p className={styles.cardTitle}>
+            {"</"}
+            <AnimatedTextCoordinated id={offset + 2}>
+              Github
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
         </a>
         <a
           href="https://www.linkedin.com/in/paul-adaimi-aa5b76172"
@@ -35,7 +50,13 @@ export default function SubSection() {
           rel="noopener noreferrer"
           className={styles.card}
         >
-          <p className={styles.cardTitle}>{"<LinkedIn>"}</p>
+          <p className={styles.cardTitle}>
+            {"<"}
+            <AnimatedTextCoordinated id={offset + 3}>
+              LinkedIn
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
           <div className={styles.imageContainer}>
             <Image
               src="svg/linkedin-dark.svg"
@@ -44,7 +65,13 @@ export default function SubSection() {
               height={75}
             />
           </div>
-          <p className={styles.cardTitle}>{"</LinkedIn>"}</p>
+          <p className={styles.cardTitle}>
+            {"</"}
+            <AnimatedTextCoordinated id={offset + 4}>
+              LinkedIn
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
         </a>
         <a
           href="mailto:paul@adaimi.com"
@@ -52,7 +79,13 @@ export default function SubSection() {
           rel="noopener noreferrer"
           className={styles.card}
         >
-          <p className={styles.cardTitle}>{"<E-Mail Me>"}</p>
+          <p className={styles.cardTitle}>
+            {"<"}
+            <AnimatedTextCoordinated id={offset + 5}>
+              E-Mail Me
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
           <div className={styles.imageContainer}>
             <Image
               src="svg/mail-square-dark.svg"
@@ -61,10 +94,22 @@ export default function SubSection() {
               height={75}
             />
           </div>
-          <p className={styles.cardTitle}>{"</E-Mail Me>"}</p>
+          <p className={styles.cardTitle}>
+            {"</"}
+            <AnimatedTextCoordinated id={offset + 6}>
+              E-Mail Me
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
         </a>
         <a href="/CV Paul Adaimi.pdf" download className={styles.card}>
-          <p className={styles.cardTitle}>{"<Download CV>"}</p>
+          <p className={styles.cardTitle}>
+            {"<"}
+            <AnimatedTextCoordinated id={offset + 7}>
+              Download CV
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
           <div className={styles.imageContainer}>
             <Image
               src="svg/download-dark.svg"
@@ -73,7 +118,13 @@ export default function SubSection() {
               height={75}
             />
           </div>
-          <p className={styles.cardTitle}>{"</Download CV>"}</p>
+          <p className={styles.cardTitle}>
+            {"</"}
+            <AnimatedTextCoordinated id={offset + 8}>
+              Download CV
+            </AnimatedTextCoordinated>
+            {">"}
+          </p>
         </a>
       </div>
     </div>

@@ -27,7 +27,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
           <div className={styles.projectInfo}>
             <p className={styles.text}>
               <span className={styles.code}>{"<Type> "}</span>
-              <AnimatedTextCoordinated typingSpeed={50} id={0}>
+              <AnimatedTextCoordinated id={0}>
                 {selectedProject.type === "phone"
                   ? "Mobile Application"
                   : "Web Application"}
@@ -36,7 +36,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
             </p>
             <p className={styles.text}>
               <span className={styles.code}>{"<Year> "}</span>
-              <AnimatedTextCoordinated typingSpeed={50} id={1}>
+              <AnimatedTextCoordinated id={1}>
                 {selectedProject.year}
               </AnimatedTextCoordinated>
               <span className={styles.code}>{" </Year>"}</span>

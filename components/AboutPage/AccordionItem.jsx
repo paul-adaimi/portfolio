@@ -64,7 +64,7 @@ export default function AccordionItem({
               !isOpen && styles.fadeOut
             }`}
           >
-            <AnimatedTextIndependant typingSpeed={20} shouldType={shouldType}>
+            <AnimatedTextIndependant shouldType={shouldType}>
               {item.description}
             </AnimatedTextIndependant>
           </p>

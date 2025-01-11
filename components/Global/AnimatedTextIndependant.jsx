@@ -3,7 +3,7 @@ import styles from "./AnimatedTextIndependant.module.css";
 
 export default function AnimatedTextIndependant({
   children,
-  typingSpeed = 100,
+  typingSpeed = 20,
   shouldType = true,
 }) {
   const [displayText, setDisplayText] = useState("");
