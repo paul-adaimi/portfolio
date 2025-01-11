@@ -51,7 +51,7 @@
 }
 
 .device.animateIn {
-  animation: fadeInDevice 1.5s ease-in forwards;
+  animation: fadeInDevice 0.75s ease-out forwards;
 }
 
 @keyframes fadeInDevice {
