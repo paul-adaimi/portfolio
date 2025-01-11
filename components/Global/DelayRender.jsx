@@ -14,14 +14,18 @@ export const useDelayedRender = () => {
   return useContext(DelayedRenderContext);
 };
 
-export const DelayRender = ({ children, delay }) => {
+export const DelayRender = ({ children, delay, isActive }) => {
   const [currentChild, setCurrentChild] = useState(children);
   const [isDelaying, setIsDelaying] = useState(false);
 
   useEffect(() => {
     let timeout;
-    if (children !== currentChild) {
-      console.log("render");
+    if (children === currentChild) {
+      return;
+    } else if (!isActive) {
+      setCurrentChild(children);
+      return;
+    } else {
       setIsDelaying(true);
 
       // Delay the render of the new child
@@ -32,10 +36,10 @@ export const DelayRender = ({ children, delay }) => {
     }
 
     return () => clearTimeout(timeout); // Cleanup timeout
-  }, [children, delay]);
+  }, [children, delay, currentChild]);
 
   return (
-    <DelayedRenderContext.Provider value={isDelaying}>
+    <DelayedRenderContext.Provider value={{ isDelaying }}>
       {currentChild}
     </DelayedRenderContext.Provider>
   );

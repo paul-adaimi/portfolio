@@ -4,6 +4,7 @@ import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 import Image from "next/image";
 import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
 
+// TODO: Add like in HomePage the closing tag
 export default function Index({ data }) {
   const { shouldAnimateOut } = useAnimatedTitle();
 

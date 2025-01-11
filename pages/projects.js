@@ -1,10 +1,8 @@
 import { useMemo } from "react";
 import Index from "../components/ProjectsPage/Index";
-import { useAnimatedTitle } from "../components/Global/AnimatedTitleProvider";
 import { AnimatedTextCoordinatorProvider } from "../components/Global/AnimatedTextCoordinatorProvider";
 
 export default function Projects() {
-  const { isAnimating } = useAnimatedTitle();
   const projects = useMemo(
     () => [
       {
@@ -40,9 +38,5 @@ The app is available on both the App Store and Google Play. Download it using th
     ],
     []
   );
-  return (
-    <AnimatedTextCoordinatorProvider shouldStart={!isAnimating}>
-      <Index projects={projects} />
-    </AnimatedTextCoordinatorProvider>
-  );
+  return <Index projects={projects} />;
 }
