@@ -19,7 +19,7 @@ export default function Index({ data }) {
           <div className={styles.contentSideTop}>
             <p className={styles.text}>
               {"<"}
-              <AnimatedTextCoordinated id={0}>
+              <AnimatedTextCoordinated typingSpeed={30} id={0}>
                 My Education
               </AnimatedTextCoordinated>
               {">"}
@@ -29,7 +29,10 @@ export default function Index({ data }) {
           <div className={styles.contentSideBottom}>
             <p className={styles.text}>
               {"</"}
-              <AnimatedTextCoordinated id={2 + data.education.length}>
+              <AnimatedTextCoordinated
+                typingSpeed={30}
+                id={2 + data.education.length}
+              >
                 My Education
               </AnimatedTextCoordinated>
               {">"}
@@ -55,7 +58,7 @@ export default function Index({ data }) {
           <div className={styles.contentSideTop}>
             <p className={styles.text}>
               {"<"}
-              <AnimatedTextCoordinated id={1}>
+              <AnimatedTextCoordinated typingSpeed={30} id={1}>
                 My Experience
               </AnimatedTextCoordinated>
               {">"}
@@ -69,6 +72,7 @@ export default function Index({ data }) {
             <p className={styles.text}>
               {"</"}
               <AnimatedTextCoordinated
+                typingSpeed={30}
                 id={3 + data.education.length + data.experience.length}
               >
                 My Experience
