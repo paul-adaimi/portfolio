@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import styles from "./Index.module.css";
 import VSCode from "./VSCode";
 import Phone from "../Global/Phone";
@@ -14,6 +14,14 @@ import { DelayRender, useDelayedRender } from "../Global/DelayRender";
 export default function Index({ projects }) {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const { shouldAnimateOut, isAnimating } = useAnimatedTitle();
+
+  const delayedDevice = useMemo(() => {
+    return (
+      <DelayRender delay={1000}>
+        <Device selectedProject={selectedProject} />
+      </DelayRender>
+    );
+  }, [selectedProject]);
 
   return (
     <>
@@ -31,12 +39,7 @@ export default function Index({ projects }) {
             shouldAnimateOut && styles.animateOut
           }`}
         >
-          <DelayRender isActive={!isAnimating} delay={1000}>
-            <Device
-              isAnimating={isAnimating}
-              selectedProject={selectedProject}
-            />
-          </DelayRender>
+          {delayedDevice}
         </div>
       </div>
       <p className={styles.footer}>{"</My Projects>"}</p>
@@ -68,13 +71,19 @@ const VSCodeWithTextCoordinator = ({
   );
 };
 
-const Device = ({ selectedProject, isAnimating }) => {
+const Device = ({ selectedProject }) => {
   const { isDelaying } = useDelayedRender();
+  const isFirstRenderRef = useRef(true);
+
+  useEffect(() => {
+    isFirstRenderRef.current = false;
+  }, []);
+
   return (
     <div
-      className={`${styles.device} ${!isAnimating && styles.animateIn} ${
-        isDelaying && !isAnimating && styles.animateOut
-      }`}
+      className={`${styles.device} ${
+        !isFirstRenderRef.current && styles.animateIn
+      } ${isDelaying && styles.animateOut}`}
     >
       {selectedProject.type === "web" ? (
         <Laptop isFull={true} />

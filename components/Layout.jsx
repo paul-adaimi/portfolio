@@ -41,15 +41,15 @@ const Layout = ({ children }) => {
         </Link>
         <div className={styles.headerRight}>
           <nav className={styles.nav}>
-            <Link href="/" className={styles.link}>
+            <NavigationLink href="/" className={styles.link}>
               Home
-            </Link>
-            <Link href="/about" className={styles.link}>
+            </NavigationLink>
+            <NavigationLink href="/about" className={styles.link}>
               About
-            </Link>
-            <Link href="/projects" className={styles.link}>
+            </NavigationLink>
+            <NavigationLink href="/projects" className={styles.link}>
               Projects
-            </Link>
+            </NavigationLink>
           </nav>
           <div className={styles.contact}>
             <a
@@ -117,3 +117,19 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
+const NavigationLink = ({ href, children, className }) => {
+  const router = useRouter();
+
+  const handleClick = (e) => {
+    if (router.pathname === href) {
+      e.preventDefault(); // Prevent navigation if already on the page
+    }
+  };
+
+  return (
+    <Link href={href} onClick={handleClick} className={className}>
+      {children}
+    </Link>
+  );
+};

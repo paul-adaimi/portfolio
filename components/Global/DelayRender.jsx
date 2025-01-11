@@ -14,17 +14,18 @@ export const useDelayedRender = () => {
   return useContext(DelayedRenderContext);
 };
 
-export const DelayRender = ({ children, delay, isActive }) => {
+export const DelayRender = ({ children, delay, shouldSkipFirst = true }) => {
   const [currentChild, setCurrentChild] = useState(children);
+  const isActiveRef = useRef(!shouldSkipFirst);
   const [isDelaying, setIsDelaying] = useState(false);
 
   useEffect(() => {
     let timeout;
     if (children === currentChild) {
       return;
-    } else if (!isActive) {
+    } else if (isActiveRef.current) {
+      isActiveRef.current = false;
       setCurrentChild(children);
-      return;
     } else {
       setIsDelaying(true);
 
