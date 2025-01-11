@@ -26,6 +26,7 @@
   background-color: #d6d7d8;
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
   position: relative;
+  min-width: 450px;
 }
 
 .contentSideLeft {
@@ -85,7 +86,7 @@
 .contentCenter {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 20px;
   padding-bottom: 0;
 }

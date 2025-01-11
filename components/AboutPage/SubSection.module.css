@@ -22,7 +22,29 @@
 .subContent {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   overflow: scroll;
+}
+
+.card {
+  background-color: #f6f6f6;
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-family: Gugi;
+  margin: 0;
+}
+
+.imageContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

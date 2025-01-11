@@ -8,32 +8,40 @@ export default function About() {
     () => ({
       education: [
         {
+          title: "Northeastern University",
+          description: `Master of Science in Computer Science`,
+        },
+        {
           title: "American University of Beirut",
           description: "Bachelor of Science in Computer Science",
         },
         {
-          title: "Northeastern University",
-          description: `Master of Science in Computer Science Master of Science in Computer Science Master of Science in Computer Science
-
-Master of Science in Computer Science Master of Science in Computer Science Master of Science in Computer Science`,
-        },
-        {
-          title: "Harvard University",
+          title: "International College",
           description: "Graduate Certificate in Data Science",
         },
       ],
       experience: [
         {
-          title: "Google",
+          title: "Northeastern University",
           description: "Software Engineer",
         },
         {
-          title: "Facebook",
+          title: "GTLogic",
           description: "Software Engineer",
         },
         {
-          title: "Microsoft",
+          title: "Murex",
           description: "Software Engineer",
+        },
+        {
+          title: "American University of Beirut",
+          description: `Collaborated with two AUB professors on a General Electric funded project aimed at improving crowd management in public spaces, such as Mecca during pilgrimage, by predicting incidents through analysis of sensor data including heart rate, accelerometer, and GPS.
+
+Developed, in JavaScript, a data visualization tool that anticipates potential stampede locations
+and timings, enhancing preventive measures.
+
+Engineered a client-server application for data acquisition from Android mobiles and custom wear-
+ables, facilitating streamlined data gathering.`,
         },
       ],
     }),

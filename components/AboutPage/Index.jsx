@@ -3,9 +3,8 @@ import Accordion from "./Accordion";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 import Image from "next/image";
 import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
-import CV from "./Cv";
+import SubSection from "./SubSection";
 
-// TODO: Add like in HomePage the closing tag
 export default function Index({ data }) {
   const { shouldAnimateOut } = useAnimatedTitle();
 
@@ -55,7 +54,7 @@ export default function Index({ data }) {
           />
         </div>
       </div>
-      <CV />
+      <SubSection />
     </div>
   );
 }
