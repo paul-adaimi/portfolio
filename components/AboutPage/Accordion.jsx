@@ -13,6 +13,7 @@ export default function Accordion({ items, coordOffset }) {
     <div className={styles.accordion}>
       {items.map((item, index) => (
         <AccordionItem
+          key={index}
           coordinationId={index + coordOffset}
           item={item}
           index={index}

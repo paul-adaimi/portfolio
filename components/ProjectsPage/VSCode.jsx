@@ -3,7 +3,6 @@ import ProjectsList from "./ProjectsList";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
 
-// TODO: Add Effect to add/remove laptop phone
 export default function VSCode({ projects, selectedProject, handleTabClick }) {
   const { shouldAnimateOut } = useAnimatedTitle();
 
@@ -48,7 +47,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                 <br />
                 {Object.keys(selectedProject.productionLinks).map(
                   (linkKey, index) => (
-                    <>
+                    <span key={index}>
                       <span
                         style={{ marginLeft: "20px" }}
                         className={styles.code}
@@ -74,7 +73,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         {" </" + linkKey + ">"}
                       </span>
                       <br />
-                    </>
+                    </span>
                   )
                 )}
                 <span className={styles.code}>{" </Production Links>"}</span>
@@ -85,7 +84,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               <span className={styles.code}>{"<Technologies>"}</span>
               <br />
               {selectedProject.technologies.map((tech, index) => (
-                <>
+                <span key={index}>
                   <span style={{ marginLeft: "20px" }} className={styles.code}>
                     {"<Tech-" + (index + 1) + "> "}
                   </span>
@@ -105,7 +104,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                     {" </Tech-" + (index + 1) + ">"}
                   </span>
                   <br />
-                </>
+                </span>
               ))}
               <span className={styles.code}>{" </Technologies>"}</span>
             </p>

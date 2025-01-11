@@ -9,8 +9,6 @@ import { useAnimatedTitle } from "../Global/AnimatedTitleProvider";
 import { AnimatedTextCoordinatorProvider } from "../Global/AnimatedTextCoordinatorProvider";
 import { DelayRender, useDelayedRender } from "../Global/DelayRender";
 
-// TODO: Fix Unique Keys
-
 export default function Index({ projects }) {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const { shouldAnimateOut, isAnimating } = useAnimatedTitle();
