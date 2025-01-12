@@ -10,24 +10,24 @@ export default function About() {
       education: [
         {
           title: "Northeastern University",
-          from: "Septermber 2023",
-          to: "Expected May 2025",
-          description: `Master of Science in Computer Science
-GPA: 4.0`,
+          type: "Master of Science in Computer Science",
+          years: "Septermber 2023 - Expected May 2025",
+          more: "GPA: 4.0",
         },
         {
           title: "American University of Beirut",
-          from: "Septermber 2015",
-          to: "December 2019",
-          description: `Bachelor of Engineering in Computer and Communication Engineering
-Placed on the Dean’s Honor List in Spring 2016, Fall 2017, Spring 2017, Fall 2018, Fall 2019
+          type: "Bachelor of Engineering in Computer and Communication Engineering",
+          years: "Septermber 2015 - December 2019",
+          more: `Placed on the Dean’s Honor List in Spring 2016, Fall 2017, Spring 2017, Fall 2018, Fall 2019.
 
 Graduated with Honors
 `,
         },
         {
           title: "International College",
-          description: "Graduate Certificate in Data Science",
+          type: "Bacalaureate in General Sciences",
+          years: "2012 - 2015",
+          more: "Graduated with distinction",
         },
       ],
       experience: [

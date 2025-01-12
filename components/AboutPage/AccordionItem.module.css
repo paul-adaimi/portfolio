@@ -135,6 +135,11 @@
   margin-left: 18px;
   white-space: pre;
   font-family: Gugi;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #ce9178;
+}
+
+.descriptionOuter {
+  color: #569cd6;
 }

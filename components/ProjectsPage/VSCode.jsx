@@ -62,10 +62,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                           textDecoration: "underline",
                         }}
                       >
-                        <AnimatedTextCoordinated
-                          typingSpeed={20}
-                          id={index + 2}
-                        >
+                        <AnimatedTextCoordinated typingSpeed={20} id={2}>
                           {selectedProject.productionLinks[linkKey]}
                         </AnimatedTextCoordinated>
                       </a>
@@ -90,13 +87,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                   </span>
                   <AnimatedTextCoordinated
                     typingSpeed={50}
-                    id={
-                      2 +
-                      index +
-                      (selectedProject.productionLinks
-                        ? Object.keys(selectedProject.productionLinks).length
-                        : 0)
-                    }
+                    id={selectedProject.productionLinks ? 3 : 2}
                   >
                     {tech}
                   </AnimatedTextCoordinated>
@@ -116,13 +107,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                 <p className={styles.descriptionText}>
                   <AnimatedTextCoordinated
                     typingSpeed={10}
-                    id={
-                      2 +
-                      selectedProject.technologies.length +
-                      (selectedProject.productionLinks
-                        ? Object.keys(selectedProject.productionLinks).length
-                        : 0)
-                    }
+                    id={selectedProject.productionLinks ? 4 : 3}
                   >
                     {selectedProject.description}
                   </AnimatedTextCoordinated>

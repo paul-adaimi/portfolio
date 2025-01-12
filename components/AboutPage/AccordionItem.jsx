@@ -38,15 +38,15 @@ export default function AccordionItem({
   );
 
   const description = itemKeysExceptTitle.map((key, index) => (
-    <span key={key} className={`${styles.text}`}>
-      {"<" + key + ">\n"}
+    <span key={key} className={`${styles.text} ${styles.descriptionOuter}`}>
+      {"<" + capitalize(key) + ">\n"}
       <span className={styles.descriptionInner}>
         <AnimatedTextIndependant shouldType={shouldType}>
           {item[key]}
         </AnimatedTextIndependant>
       </span>
       {"\n</" +
-        key +
+        capitalize(key) +
         ">" +
         (index !== itemKeysExceptTitle.length - 1 ? "\n\n" : "")}
     </span>
@@ -105,3 +105,5 @@ export default function AccordionItem({
     </div>
   );
 }
+
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
