@@ -41,7 +41,7 @@ export default function AccordionItem({
     <span key={key} className={`${styles.text} ${styles.descriptionOuter}`}>
       {"<" + capitalize(key) + ">\n"}
       <span className={styles.descriptionInner}>
-        <AnimatedTextIndependant shouldType={shouldType}>
+        <AnimatedTextIndependant typingSpeed={10} shouldType={shouldType}>
           {item[key]}
         </AnimatedTextIndependant>
       </span>
