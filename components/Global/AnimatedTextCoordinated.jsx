@@ -10,8 +10,12 @@ export default function AnimatedTextCoordinated({
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
 
-  const { currentAnimatingId, setCurrentAnimatingId } =
+  const { currentAnimatingId, updateAnimatingIdCalls, setId } =
     useAnimatedTextCoordinator();
+
+  useEffect(() => {
+    setId(id);
+  }, [id, setId]);
 
   useEffect(() => {
     if (currentAnimatingId === id) {
@@ -41,9 +45,9 @@ export default function AnimatedTextCoordinated({
       setIsTyping(false);
     }
     if (displayText === children && currentAnimatingId === id) {
-      setCurrentAnimatingId(currentAnimatingId + 1);
+      updateAnimatingIdCalls(id);
     }
-  }, [displayText, children, setCurrentAnimatingId, currentAnimatingId]);
+  }, [displayText, children, updateAnimatingIdCalls, currentAnimatingId]);
 
   useEffect(() => {
     if (children) {

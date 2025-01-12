@@ -47,7 +47,7 @@ export default function AccordionItem({
       >
         <p className={styles.text}>
           {"<"}
-          <AnimatedTextCoordinated typingSpeed={10} id={coordinationId}>
+          <AnimatedTextCoordinated typingSpeed={30} id={coordinationId}>
             {item.title}
           </AnimatedTextCoordinated>
           {">"}

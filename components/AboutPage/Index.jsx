@@ -19,7 +19,7 @@ export default function Index({ data }) {
           <div className={styles.contentSideTop}>
             <p className={styles.text}>
               {"<"}
-              <AnimatedTextCoordinated typingSpeed={30} id={0}>
+              <AnimatedTextCoordinated id={0}>
                 My Education
               </AnimatedTextCoordinated>
               {">"}
@@ -58,7 +58,7 @@ export default function Index({ data }) {
           <div className={styles.contentSideTop}>
             <p className={styles.text}>
               {"<"}
-              <AnimatedTextCoordinated typingSpeed={30} id={0}>
+              <AnimatedTextCoordinated id={0}>
                 My Experience
               </AnimatedTextCoordinated>
               {">"}
