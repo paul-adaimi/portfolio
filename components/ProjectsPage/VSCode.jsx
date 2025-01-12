@@ -24,7 +24,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
             handleTabClick={handleTabClick}
             projects={projects}
           />
-          <div className={styles.projectInfo}>
+          <div key={selectedProject.id} className={styles.projectInfo}>
             <p className={styles.text}>
               <span className={styles.code}>{"<Type> "}</span>
               <AnimatedTextCoordinated id={0}>

@@ -6,6 +6,7 @@ export default function Projects() {
   const projects = useMemo(
     () => [
       {
+        id: 1,
         title: "Bleumer",
         year: "2024",
         technologies: ["Expo", "React Native", "Firebase", "Javascript"],
@@ -22,6 +23,7 @@ The app is available on both the App Store and Google Play. Download it using th
         imgSrc: "/images/bleumer.png",
       },
       {
+        id: 2,
         title: "Book Me",
         year: "2018",
         technologies: ["React", "Node.js", "Express", "Mongo", "Javascript"],
@@ -29,6 +31,7 @@ The app is available on both the App Store and Google Play. Download it using th
         type: "web",
       },
       {
+        id: 3,
         title: "Air Hockey",
         year: "2017",
         technologies: ["Android", "Java"],

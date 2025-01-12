@@ -14,12 +14,12 @@ export const AnimatedTextCoordinatorProvider = ({
   shouldStart = true,
 }) => {
   const [currentAnimatingId, setCurrentAnimatingId] = useState(-1);
-  const [forceRestart, setForceRestart] = useState(false);
   const [isDone, setIsDone] = useState(false);
   const [idCount, setIdCount] = useState({});
   const [animatingIdCalls, setAnimatingIdCalls] = useState({});
 
   const setId = useCallback((id) => {
+    console.log("set id");
     setIdCount((prev) => ({
       ...prev,
       [id]: prev[id] ? prev[id] + 1 : 1,
@@ -27,6 +27,7 @@ export const AnimatedTextCoordinatorProvider = ({
   }, []);
 
   const updateAnimatingIdCalls = useCallback((id) => {
+    console.log("update animating id calls");
     setAnimatingIdCalls((prev) => ({
       ...prev,
       [id]: prev[id] ? prev[id] + 1 : 1,
@@ -38,17 +39,26 @@ export const AnimatedTextCoordinatorProvider = ({
       animatingIdCalls[currentAnimatingId] &&
       animatingIdCalls[currentAnimatingId] === idCount[currentAnimatingId]
     ) {
+      console.log("running animating id calls effect");
       setCurrentAnimatingId(currentAnimatingId + 1);
     }
   }, [idCount, animatingIdCalls, currentAnimatingId]);
 
   useEffect(() => {
-    if ((shouldStart && !isDone) || forceRestart) {
+    if (shouldStart && !isDone) {
+      console.log("running is done effect");
       setCurrentAnimatingId(0);
       setIsDone(true);
-      setForceRestart(false);
     }
-  }, [shouldStart, forceRestart, isDone]);
+  }, [shouldStart, isDone]);
+
+  const forceRestart = useCallback(() => {
+    console.log("force restart");
+    setIdCount({});
+    setAnimatingIdCalls({});
+    setCurrentAnimatingId(-1);
+    setIsDone(false);
+  }, []);
 
   return (
     <AnimatedTextCoordinatorContext.Provider
@@ -56,7 +66,7 @@ export const AnimatedTextCoordinatorProvider = ({
         currentAnimatingId,
         setId,
         updateAnimatingIdCalls,
-        setForceRestart,
+        forceRestart,
       }}
     >
       {children}

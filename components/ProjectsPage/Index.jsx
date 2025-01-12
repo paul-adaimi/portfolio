@@ -50,14 +50,14 @@ const VSCodeWithTextCoordinator = ({
   setSelectedProject,
   projects,
 }) => {
-  const { setForceRestart } = useAnimatedTextCoordinator();
+  const { forceRestart } = useAnimatedTextCoordinator();
 
   const handleTabClick = (project) => {
     if (selectedProject === project) {
       return;
     }
+    forceRestart();
     setSelectedProject(project);
-    setForceRestart(true);
   };
 
   return (
