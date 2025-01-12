@@ -25,7 +25,7 @@ export default function PaulCoded() {
           }`}
         >
           {"<"}
-          <AnimatedTextCoordinated id={2}>Body</AnimatedTextCoordinated>
+          <AnimatedTextCoordinated id={1}>Body</AnimatedTextCoordinated>
           {">"}
         </p>
       </div>
@@ -47,7 +47,7 @@ export default function PaulCoded() {
           }`}
         >
           {"</"}
-          <AnimatedTextCoordinated id={1}>Head</AnimatedTextCoordinated>
+          <AnimatedTextCoordinated id={0}>Head</AnimatedTextCoordinated>
           {">"}
         </p>
         <p
@@ -56,7 +56,7 @@ export default function PaulCoded() {
           }`}
         >
           {"<"}
-          <AnimatedTextCoordinated id={3}>Body</AnimatedTextCoordinated>
+          <AnimatedTextCoordinated id={1}>Body</AnimatedTextCoordinated>
           {"/>"}
         </p>
       </div>

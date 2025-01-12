@@ -8,11 +8,16 @@ export default function AnimatedTextCoordinated({
   typingSpeed = 50,
 }) {
   const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
 
   const { currentAnimatingId, setCurrentAnimatingId } =
     useAnimatedTextCoordinator();
 
-  const isTyping = currentAnimatingId === id;
+  useEffect(() => {
+    if (currentAnimatingId === id) {
+      setIsTyping(true);
+    }
+  }, [currentAnimatingId, id]);
 
   useEffect(() => {
     let timeout;
@@ -33,9 +38,12 @@ export default function AnimatedTextCoordinated({
 
   useEffect(() => {
     if (displayText === children) {
-      setCurrentAnimatingId((prev) => prev + 1);
+      setIsTyping(false);
     }
-  }, [displayText, children, setCurrentAnimatingId]);
+    if (displayText === children && currentAnimatingId === id) {
+      setCurrentAnimatingId(currentAnimatingId + 1);
+    }
+  }, [displayText, children, setCurrentAnimatingId, currentAnimatingId]);
 
   useEffect(() => {
     if (children) {

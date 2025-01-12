@@ -24,14 +24,14 @@ export default function Index({ data }) {
               </AnimatedTextCoordinated>
               {">"}
             </p>
-            <Accordion coordOffset={2} items={data.education} />
+            <Accordion coordOffset={1} items={data.education} />
           </div>
           <div className={styles.contentSideBottom}>
             <p className={styles.text}>
               {"</"}
               <AnimatedTextCoordinated
                 typingSpeed={30}
-                id={2 + data.education.length}
+                id={1 + Math.max(data.education.length, data.experience.length)}
               >
                 My Education
               </AnimatedTextCoordinated>
@@ -58,22 +58,19 @@ export default function Index({ data }) {
           <div className={styles.contentSideTop}>
             <p className={styles.text}>
               {"<"}
-              <AnimatedTextCoordinated typingSpeed={30} id={1}>
+              <AnimatedTextCoordinated typingSpeed={30} id={0}>
                 My Experience
               </AnimatedTextCoordinated>
               {">"}
             </p>
-            <Accordion
-              coordOffset={3 + data.education.length}
-              items={data.experience}
-            />
+            <Accordion coordOffset={1} items={data.experience} />
           </div>
           <div className={styles.contentSideBottom}>
             <p className={styles.text}>
               {"</"}
               <AnimatedTextCoordinated
                 typingSpeed={30}
-                id={3 + data.education.length + data.experience.length}
+                id={1 + Math.max(data.education.length, data.experience.length)}
               >
                 My Experience
               </AnimatedTextCoordinated>
@@ -82,7 +79,9 @@ export default function Index({ data }) {
           </div>
         </div>
       </div>
-      <SubSection offset={4 + data.education.length + data.experience.length} />
+      <SubSection
+        offset={2 + Math.max(data.education.length, data.experience.length)}
+      />
     </div>
   );
 }
