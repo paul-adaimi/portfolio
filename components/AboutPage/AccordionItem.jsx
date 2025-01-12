@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import styles from "./AccordionItem.module.css";
 import AnimatedTextIndependant from "../Global/AnimatedTextIndependant";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
@@ -32,6 +32,27 @@ export default function AccordionItem({
     }
   }, [isOpen]);
 
+  const itemKeysExceptTitle = useMemo(
+    () => Object.keys(item).filter((key) => key !== "title"),
+    [item]
+  );
+
+  const description = itemKeysExceptTitle.map((key, index) => (
+    <span key={key} className={`${styles.text}`}>
+      {"<" + key + ">\n"}
+      <span className={styles.descriptionInner}>
+        <AnimatedTextIndependant shouldType={shouldType}>
+          {item[key]}
+        </AnimatedTextIndependant>
+      </span>
+      {"\n</" +
+        key +
+        ">" +
+        (index !== itemKeysExceptTitle.length - 1 ? "\n\n" : "")}
+    </span>
+  ));
+
+  console.log("itemKeysExceptTitle", itemKeysExceptTitle);
   return (
     <div
       key={index}
@@ -64,9 +85,7 @@ export default function AccordionItem({
               !isOpen && styles.fadeOut
             }`}
           >
-            <AnimatedTextIndependant shouldType={shouldType}>
-              {item.description}
-            </AnimatedTextIndependant>
+            {description}
           </p>
 
           <div
