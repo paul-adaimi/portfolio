@@ -35,7 +35,7 @@
 
 .imagePaul {
   min-width: 400px;
-  min-height: 400px;
+  min-height: 530px;
   animation: fadeIn 1.5s ease-out forwards; /* Animate to visible */
 }
 
