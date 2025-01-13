@@ -95,6 +95,22 @@ const Layout = ({ children }) => {
               />
             </a>
           </div>
+          <div className={styles.cv}>
+            <a
+              className={`${styles.link} ${styles.cvLink}`}
+              href="https://github.com/paul-adaimi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="svg/download-paper.svg"
+                alt="GitHub Icon"
+                width={25}
+                height={25}
+              />
+              <p style={{ margin: 0, fontSize: 8 }}>CV</p>
+            </a>
+          </div>
         </div>
       </header>
       <main className={styles.main}>

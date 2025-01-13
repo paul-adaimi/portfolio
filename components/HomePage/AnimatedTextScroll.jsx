@@ -103,7 +103,18 @@ const AnimatedTextScroll = ({
       setVisibleLength(visibleChars);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const checkScrollable = () => {
+      // If the content fits in the viewport, show all text
+      if (document.body.scrollHeight <= window.innerHeight) {
+        setVisibleLength(totalLength);
+      } else {
+        // Otherwise, set up the scroll listener
+        window.addEventListener("scroll", handleScroll);
+      }
+    };
+
+    checkScrollable();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [totalLength, startPercentage]);
 
