@@ -52,7 +52,6 @@ export default function AccordionItem({
     </span>
   ));
 
-  console.log("itemKeysExceptTitle", itemKeysExceptTitle);
   return (
     <div
       key={index}
