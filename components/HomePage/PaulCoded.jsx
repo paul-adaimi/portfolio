@@ -55,9 +55,9 @@ export default function PaulCoded() {
             shouldAnimateOut && styles.animateOut
           }`}
         >
-          {"<"}
+          {"</"}
           <AnimatedTextCoordinated id={1}>Body</AnimatedTextCoordinated>
-          {"/>"}
+          {">"}
         </p>
       </div>
     </div>

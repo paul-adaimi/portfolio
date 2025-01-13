@@ -7,11 +7,11 @@ export default function SubSection({ offset }) {
   return (
     <div className={styles.content}>
       <p className={styles.title}>
-        {"<"}
+        {"</"}
         <AnimatedTextCoordinated noWrap={true} id={offset}>
           About Me
         </AnimatedTextCoordinated>
-        {"/>"}
+        {">"}
       </p>
       <div className={styles.subContent}>
         <a

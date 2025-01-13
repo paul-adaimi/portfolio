@@ -8,11 +8,11 @@ export default function Intro() {
   return (
     <div className={styles.content}>
       <p className={styles.title}>
-        {"<"}
+        {"</"}
         <AnimatedTextCoordinated noWrap={true} id={2}>
           Paul Adaimi
         </AnimatedTextCoordinated>
-        {"/>"}
+        {">"}
       </p>
       <div className={styles.subContent}>
         <div className={styles.card}>
