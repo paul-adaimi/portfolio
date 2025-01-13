@@ -8,7 +8,9 @@ export default function SubSection({ offset }) {
     <div className={styles.content}>
       <p className={styles.title}>
         {"<"}
-        <AnimatedTextCoordinated id={offset}>About Me</AnimatedTextCoordinated>
+        <AnimatedTextCoordinated noWrap={true} id={offset}>
+          About Me
+        </AnimatedTextCoordinated>
         {"/>"}
       </p>
       <div className={styles.subContent}>

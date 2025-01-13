@@ -6,6 +6,7 @@ export default function AnimatedTextCoordinated({
   children,
   id,
   typingSpeed = 50,
+  noWrap = false,
 }) {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -56,7 +57,11 @@ export default function AnimatedTextCoordinated({
   }, [children]);
 
   return (
-    <span className={`${styles.text} ${isTyping ? styles.blinking : ""}`}>
+    <span
+      className={`${styles.text} ${isTyping ? styles.blinking : ""} ${
+        noWrap && styles.noWrap
+      }`}
+    >
       {displayText}
     </span>
   );

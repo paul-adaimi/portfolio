@@ -9,7 +9,9 @@ export default function Intro() {
     <div className={styles.content}>
       <p className={styles.title}>
         {"<"}
-        <AnimatedTextCoordinated id={2}>Paul Adaimi</AnimatedTextCoordinated>
+        <AnimatedTextCoordinated noWrap={true} id={2}>
+          Paul Adaimi
+        </AnimatedTextCoordinated>
         {"/>"}
       </p>
       <div className={styles.subContent}>

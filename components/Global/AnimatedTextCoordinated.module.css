@@ -4,6 +4,10 @@
   text-wrap: wrap;
 }
 
+.noWrap {
+  text-wrap: nowrap;
+}
+
 .blinking {
   animation: blink 0.5s step-end infinite forwards;
 }
