@@ -8,9 +8,7 @@ export default function SubSection({ offset }) {
     <div className={styles.content}>
       <p className={styles.title}>
         {"<"}
-        <AnimatedTextCoordinated id={offset}>
-          Paul Adaimi
-        </AnimatedTextCoordinated>
+        <AnimatedTextCoordinated id={offset}>About Me</AnimatedTextCoordinated>
         {"/>"}
       </p>
       <div className={styles.subContent}>
@@ -38,7 +36,7 @@ export default function SubSection({ offset }) {
           </div>
           <p className={styles.cardTitle}>
             {"</"}
-            <AnimatedTextCoordinated id={offset + 2}>
+            <AnimatedTextCoordinated id={offset + 1}>
               Github
             </AnimatedTextCoordinated>
             {">"}
@@ -52,7 +50,7 @@ export default function SubSection({ offset }) {
         >
           <p className={styles.cardTitle}>
             {"<"}
-            <AnimatedTextCoordinated id={offset + 3}>
+            <AnimatedTextCoordinated id={offset + 2}>
               LinkedIn
             </AnimatedTextCoordinated>
             {">"}
@@ -67,7 +65,7 @@ export default function SubSection({ offset }) {
           </div>
           <p className={styles.cardTitle}>
             {"</"}
-            <AnimatedTextCoordinated id={offset + 4}>
+            <AnimatedTextCoordinated id={offset + 2}>
               LinkedIn
             </AnimatedTextCoordinated>
             {">"}
@@ -81,7 +79,7 @@ export default function SubSection({ offset }) {
         >
           <p className={styles.cardTitle}>
             {"<"}
-            <AnimatedTextCoordinated id={offset + 5}>
+            <AnimatedTextCoordinated id={offset + 3}>
               E-Mail Me
             </AnimatedTextCoordinated>
             {">"}
@@ -96,7 +94,7 @@ export default function SubSection({ offset }) {
           </div>
           <p className={styles.cardTitle}>
             {"</"}
-            <AnimatedTextCoordinated id={offset + 6}>
+            <AnimatedTextCoordinated id={offset + 3}>
               E-Mail Me
             </AnimatedTextCoordinated>
             {">"}
@@ -105,7 +103,7 @@ export default function SubSection({ offset }) {
         <a href="/CV Paul Adaimi.pdf" download className={styles.card}>
           <p className={styles.cardTitle}>
             {"<"}
-            <AnimatedTextCoordinated id={offset + 7}>
+            <AnimatedTextCoordinated id={offset + 4}>
               Download CV
             </AnimatedTextCoordinated>
             {">"}
@@ -120,7 +118,7 @@ export default function SubSection({ offset }) {
           </div>
           <p className={styles.cardTitle}>
             {"</"}
-            <AnimatedTextCoordinated id={offset + 8}>
+            <AnimatedTextCoordinated id={offset + 4}>
               Download CV
             </AnimatedTextCoordinated>
             {">"}
