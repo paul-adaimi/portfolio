@@ -52,7 +52,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         style={{ marginLeft: "20px" }}
                         className={styles.code}
                       >
-                        {"<" + linkKey + "> "}
+                        {"<Link-" + index + "> "}
                       </span>
                       <a
                         href={selectedProject.productionLinks[linkKey]}
@@ -63,11 +63,11 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         }}
                       >
                         <AnimatedTextCoordinated typingSpeed={20} id={2}>
-                          {selectedProject.productionLinks[linkKey]}
+                          {capitalize(linkKey)}
                         </AnimatedTextCoordinated>
                       </a>
                       <span className={styles.code}>
-                        {" </" + linkKey + ">"}
+                        {"</Link-" + index + "> "}
                       </span>
                       <br />
                     </span>
@@ -81,13 +81,14 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               <span className={styles.code}>{"<Technologies>"}</span>
               <br />
               {selectedProject.technologies.map((tech, index) => (
-                <span key={index}>
+                <span style={{ whiteSpace: "nowrap" }} key={index}>
                   <span style={{ marginLeft: "20px" }} className={styles.code}>
                     {"<Tech-" + (index + 1) + "> "}
                   </span>
                   <AnimatedTextCoordinated
                     typingSpeed={50}
                     id={selectedProject.productionLinks ? 3 : 2}
+                    noWrap={true}
                   >
                     {tech}
                   </AnimatedTextCoordinated>
@@ -130,3 +131,5 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
     </div>
   );
 }
+
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);

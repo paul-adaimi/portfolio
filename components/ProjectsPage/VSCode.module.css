@@ -139,7 +139,7 @@
 @media screen and (max-width: 1000px) {
   .window {
     max-width: none;
-    min-width: 500px;
+    min-width: 0;
   }
 }
 
