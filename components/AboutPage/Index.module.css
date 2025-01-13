@@ -109,7 +109,8 @@
 
 .imagePaul {
   min-width: 400px;
-  min-height: 400px;
+  min-height: 500px;
+  transition: all 0.5s;
   animation: fadeInImage 1.5s ease-out forwards; /* Animate to visible */
 }
 
@@ -139,4 +140,41 @@
   width: 100%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .imagePaul {
+    min-width: 0;
+    max-width: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .contentCenter {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text {
+    font-size: 30px;
+  }
+
+  .contentSide {
+    min-width: 320px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .text {
+    font-size: 25px;
+  }
+
+  .contentSide {
+    min-width: 0;
+  }
 }

@@ -143,3 +143,9 @@
 .descriptionOuter {
   color: #569cd6;
 }
+
+@media screen and (max-width: 360px) {
+  .accordionTitle {
+    font-size: 15px;
+  }
+}
