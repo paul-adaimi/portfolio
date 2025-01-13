@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .contentRight {
@@ -154,7 +154,6 @@
 
 .bodyCloseTag {
   position: relative;
-  left: -10px;
   margin-top: 170px;
   animation: bodyCloseTagAnimationIn 1.5s ease-in-out forwards;
 }
@@ -166,7 +165,6 @@
   }
   to {
     opacity: 1;
-    left: -10px;
   }
 }
 
@@ -182,24 +180,109 @@
 }
 
 @media screen and (max-width: 700px) {
-  .contentLeft {
-    display: none;
+  .text {
+    font-size: 20px;
   }
 
-  .contentRight {
-    display: none;
-  }
-
-  .contentCenter {
-    flex: 1;
-  }
-}
-
-@media screen and (max-width: 500px) {
   .imagePaul {
     min-width: 300px;
     min-height: 400px;
     width: 300px;
     height: 400px;
+  }
+
+  .headOpenTag {
+    right: -100px;
+    margin-top: 80px;
+  }
+
+  @keyframes headOpenTagAnimationIn {
+    from {
+      opacity: 0;
+      right: 400px;
+    }
+
+    to {
+      opacity: 1;
+      right: -100px;
+    }
+  }
+
+  .headCloseTag {
+    left: -100px;
+    margin-top: 80px;
+  }
+
+  @keyframes headCloseTagAnimationIn {
+    from {
+      opacity: 0;
+      left: 400px;
+    }
+    to {
+      opacity: 1;
+      left: -100px;
+    }
+  }
+
+  .bodyOpenTag {
+    margin-top: 130px;
+  }
+
+  .bodyCloseTag {
+    margin-top: 130px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text {
+    font-size: 18px;
+  }
+
+  .imagePaul {
+    min-width: 200px;
+    min-height: 270px;
+    width: 200px;
+    height: 270px;
+  }
+
+  .headOpenTag {
+    right: -60px;
+    margin-top: 50px;
+  }
+
+  @keyframes headOpenTagAnimationIn {
+    from {
+      opacity: 0;
+      right: 400px;
+    }
+
+    to {
+      opacity: 1;
+      right: -60px;
+    }
+  }
+
+  .headCloseTag {
+    left: -60px;
+    margin-top: 50px;
+  }
+
+  @keyframes headCloseTagAnimationIn {
+    from {
+      opacity: 0;
+      left: 400px;
+    }
+    to {
+      opacity: 1;
+      left: -60px;
+    }
+  }
+
+  .bodyOpenTag {
+    margin-top: 60px;
+  }
+
+  .bodyCloseTag {
+    margin-top: 60px;
   }
 }
