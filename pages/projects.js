@@ -51,6 +51,7 @@ Developed a cross-platform application, where diﬀerent companies use their own
         description:
           "Designed and implemented a game library using Java and JavaFX, where multiplayer games are oﬀered online through a server.",
         type: "web",
+        imgSrc: "/images/steal.jpg",
       },
     ],
     []
