@@ -52,7 +52,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         style={{ marginLeft: "20px" }}
                         className={styles.code}
                       >
-                        {"<Link-" + index + "> "}
+                        {"<" + index + "> "}
                       </span>
                       <a
                         href={selectedProject.productionLinks[linkKey]}
@@ -66,9 +66,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                           {capitalize(linkKey)}
                         </AnimatedTextCoordinated>
                       </a>
-                      <span className={styles.code}>
-                        {"</Link-" + index + "> "}
-                      </span>
+                      <span className={styles.code}>{"</" + index + "> "}</span>
                       <br />
                     </span>
                   )
@@ -83,7 +81,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               {selectedProject.technologies.map((tech, index) => (
                 <span style={{ whiteSpace: "nowrap" }} key={index}>
                   <span style={{ marginLeft: "20px" }} className={styles.code}>
-                    {"<Tech-" + (index + 1) + "> "}
+                    {"<" + (index + 1) + "> "}
                   </span>
                   <AnimatedTextCoordinated
                     typingSpeed={50}
@@ -93,7 +91,7 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                     {tech}
                   </AnimatedTextCoordinated>
                   <span className={styles.code}>
-                    {" </Tech-" + (index + 1) + ">"}
+                    {" </" + (index + 1) + ">"}
                   </span>
                   <br />
                 </span>
