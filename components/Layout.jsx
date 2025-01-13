@@ -98,13 +98,12 @@ const Layout = ({ children }) => {
           <div className={styles.cv}>
             <a
               className={`${styles.link} ${styles.cvLink}`}
-              href="https://github.com/paul-adaimi"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/CV Paul Adaimi.pdf"
+              download
             >
               <Image
                 src="svg/download-paper.svg"
-                alt="GitHub Icon"
+                alt="Download CV Icon"
                 width={25}
                 height={25}
               />
