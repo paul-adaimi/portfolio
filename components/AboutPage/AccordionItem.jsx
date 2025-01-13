@@ -33,7 +33,7 @@ export default function AccordionItem({
   }, [isOpen]);
 
   const itemKeysExceptTitle = useMemo(
-    () => Object.keys(item).filter((key) => key !== "title"),
+    () => Object.keys(item).filter((key) => key !== "sectionName"),
     [item]
   );
 
@@ -69,7 +69,7 @@ export default function AccordionItem({
         <p className={styles.text}>
           {"<"}
           <AnimatedTextCoordinated typingSpeed={30} id={coordinationId}>
-            {item.title}
+            {item.sectionName}
           </AnimatedTextCoordinated>
           {">"}
         </p>
@@ -98,7 +98,7 @@ export default function AccordionItem({
               className={`${styles.text} ${styles.closingTagText} ${
                 styles.fadeIn
               } ${!isOpen && styles.fadeOut}`}
-            >{`</${item.title}>`}</p>
+            >{`</${item.sectionName}>`}</p>
           </div>
         </div>
       )}

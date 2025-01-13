@@ -84,7 +84,19 @@ const Device = ({ selectedProject }) => {
       } ${isDelaying && styles.animateOut}`}
     >
       {selectedProject.type === "web" ? (
-        <Laptop isFull={true} />
+        <Laptop isFull={true}>
+          <Image
+            src={selectedProject.imgSrc}
+            alt={selectedProject.title}
+            width={300}
+            height={400}
+            style={{
+              height: "100%",
+              width: "100%",
+              borderRadius: 20,
+            }}
+          />
+        </Laptop>
       ) : (
         <Phone isFull={true}>
           <Image
@@ -93,6 +105,8 @@ const Device = ({ selectedProject }) => {
             width={300}
             height={400}
             style={{
+              height: "100%",
+              width: "100%",
               borderRadius: 20,
             }}
           />

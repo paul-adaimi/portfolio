@@ -24,7 +24,9 @@ export default function Index({ data }) {
               </AnimatedTextCoordinated>
               {">"}
             </p>
-            <Accordion coordOffset={1} items={data.education} />
+            <div className={styles.accordionContainer}>
+              <Accordion coordOffset={1} items={data.education} />
+            </div>
           </div>
           <div className={styles.contentSideBottom}>
             <p className={styles.text}>
@@ -63,7 +65,9 @@ export default function Index({ data }) {
               </AnimatedTextCoordinated>
               {">"}
             </p>
-            <Accordion coordOffset={1} items={data.experience} />
+            <div className={styles.accordionContainer}>
+              <Accordion coordOffset={1} items={data.experience} />
+            </div>
           </div>
           <div className={styles.contentSideBottom}>
             <p className={styles.text}>

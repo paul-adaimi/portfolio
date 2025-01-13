@@ -5,13 +5,7 @@ export default function Intro({ children, isFull = false }) {
     <div className={styles.screen}>
       <div className={styles.laptop + " " + (isFull ? styles.full : "")}>
         <div className={styles.laptopInner + " " + (isFull ? styles.full : "")}>
-          <div
-            style={{
-              marginTop: 5,
-            }}
-          >
-            {children}
-          </div>
+          {children}
         </div>
         {!isFull && (
           <div className={styles.laptopNotch}>

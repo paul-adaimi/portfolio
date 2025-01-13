@@ -27,16 +27,30 @@ The app is available on both the App Store and Google Play. Download it using th
         title: "Book Me",
         year: "2018",
         technologies: ["React", "Node.js", "Express", "Mongo", "Javascript"],
-        description: "This is the description for Project 2",
+        description: `Developed, with the collaboration of three other students, a new generalized booking service that facilitates for clients to book speciﬁc seats in cinemas, restaurants, planes etc... 
+
+Developed a cross-platform application, where diﬀerent companies use their own system and creates the seating arrangement, while clients surf the companies and make their reservations. `,
         type: "web",
+        imgSrc: "/images/book-me.jpg",
       },
       {
         id: 3,
         title: "Air Hockey",
         year: "2017",
         technologies: ["Android", "Java"],
-        description: "This is the description for Project 3",
+        description:
+          "Developed a 2-player game for android mobile users, which allows to interactively play the traditional air hockey game using Wifi-Direct to exchange data and mobile sensors to move the mallet",
         type: "phone",
+        imgSrc: "/images/air-hockey-2.jpg",
+      },
+      {
+        id: 4,
+        title: "Steal",
+        year: "2017",
+        technologies: ["Java", "JavaFX"],
+        description:
+          "Designed and implemented a game library using Java and JavaFX, where multiplayer games are oﬀered online through a server.",
+        type: "web",
       },
     ],
     []

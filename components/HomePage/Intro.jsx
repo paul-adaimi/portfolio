@@ -47,31 +47,38 @@ export default function Intro() {
         </div>
         <div className={styles.card}>
           <Laptop>
-            <AnimatedTextScroll chunks={["paul@adaimi.com > "]}>
-              {"paul@adaimi.com > "}cd Paul\ Adaimi\'s\ Portfolio/
-              <br />
-              <br />
-              {"paul@adaimi.com > "}touch Readme.md
-              <br />
-              <br />
-              {"paul@adaimi.com > "}vim Readme.md
-              <br />
-              <br />
-              # Hello stranger...
-              <br />
-              ```
-              <br />I love building web apps.
-              <br />
-              This one was built with Next.js.
-              <br />I hope you like it.
-              <br />
-              ```
-              <br />
-              :wq
-              <br />
-              <br />
-              {"paul@adaimi.com > "}
-            </AnimatedTextScroll>
+            <div
+              style={{
+                marginTop: 5,
+                padding: 20,
+              }}
+            >
+              <AnimatedTextScroll chunks={["paul@adaimi.com > "]}>
+                {"paul@adaimi.com > "}cd Paul\ Adaimi\'s\ Portfolio/
+                <br />
+                <br />
+                {"paul@adaimi.com > "}touch Readme.md
+                <br />
+                <br />
+                {"paul@adaimi.com > "}vim Readme.md
+                <br />
+                <br />
+                # Hello stranger...
+                <br />
+                ```
+                <br />I love building web apps.
+                <br />
+                This one was built with Next.js.
+                <br />I hope you like it.
+                <br />
+                ```
+                <br />
+                :wq
+                <br />
+                <br />
+                {"paul@adaimi.com > "}
+              </AnimatedTextScroll>
+            </div>
           </Laptop>
         </div>
       </div>
