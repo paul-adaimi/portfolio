@@ -21,5 +21,6 @@ const routeChange = () => {
   tempFix();
 };
 
+Router.events.on("routeChangeStart", routeChange);
 Router.events.on("routeChangeComplete", routeChange);
 Router.events.on("routeChangeStart", routeChange);
