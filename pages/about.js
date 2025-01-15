@@ -33,7 +33,7 @@ Graduated with Honors
         {
           sectionName: "Northeastern University",
           "title 1": "Teaching Assistant - Web Development",
-          "period 1": "Septemnber 2024 - May 2025",
+          "period 1": "September 2024 - May 2025",
           "title 2": "Head Teaching Assistant - Algorithms",
           "period 2": "January 2023 - May 2023",
           description: `Offering weekly recitations to provide hands-on experience with implementations, debugging, and optimization techniques.
