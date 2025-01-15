@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
             <a
               style={{ height: "25px" }}
               className={styles.link}
-              href="mailto:paul@adaimi.com"
+              href="mailto:hello@pauladaimi.com"
               target="_blank"
               rel="noopener noreferrer"
             >

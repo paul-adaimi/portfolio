@@ -74,7 +74,7 @@ export default function SubSection({ offset }) {
           </p>
         </a>
         <a
-          href="mailto:paul@adaimi.com"
+          href="mailto:hello@pauladaimi.com"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.card}
