@@ -10,13 +10,13 @@ export default function About() {
         {
           sectionName: "Northeastern University",
           type: "Master of Science in Computer Science",
-          period: "Septermber 2023 - Expected May 2025",
+          period: "September 2023 - Expected May 2025",
           more: "GPA: 4.0",
         },
         {
           sectionName: "American University of Beirut",
           type: "Bachelor of Engineering in Computer and Communication Engineering",
-          period: "Septermber 2015 - December 2019",
+          period: "September 2015 - December 2019",
           more: `Placed on the Dean’s Honor List in Spring 2016, Fall 2017, Spring 2017, Fall 2018, Fall 2019.
 
 Graduated with Honors
