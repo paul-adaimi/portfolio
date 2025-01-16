@@ -45,7 +45,7 @@ Grading quizzes and homework while offering constructive feedback to support stu
           title: "Web Developer",
           period: "February 2020 - September 2023",
           technologies: `Frameworks: Ember.js, React
-Langauges: TypeScript, JavaScript, HTML, CSS
+Languages: TypeScript, JavaScript, HTML, CSS
 Version Control: Git, Github
 CI/CD: CircleCI, SonarCloud, Percy`,
           description: `Developed the front-end for Vimly Benefits Solutions’ SIMON web-app, enhancing employer-supported staff decisions on health benefits and plan costs.
@@ -59,7 +59,7 @@ Trained more than 10 new hires in company-specific technologies, enhancing team 
           title: "Full-Stack Developer, Intern",
           period: "May 2019 - August 2019",
           technologies: `Frameworks: React, Java Spring, DotNet Core
-Langauges: Java, C#, JavaScript, HTML, CSS
+Languages: Java, C#, JavaScript, HTML, CSS
 Version Control: Git, Github
 CI/CD: Jenkins`,
           description: `Engineered, in a team of three, a back-end web service using Java Spring and C#, coupled with React for front-end, to automate command sequences for Murex developers, enhancing task flow in cloud environments.`,
@@ -69,7 +69,7 @@ CI/CD: Jenkins`,
           title: "Research Assistant",
           period: "May 2017 - May 2018",
           technologies: `Frameworks: JQuery, D3.js
-Langauges: JavaScript, HTML, CSS`,
+Languages: JavaScript, HTML, CSS`,
           description: `Collaborated with two AUB professors on a General Electric funded project aimed at improving crowd management in public spaces, such as Mecca during pilgrimage, by predicting incidents through analysis of sensor data including heart rate, accelerometer, and GPS.
 
 Developed, in JavaScript, a data visualization tool that anticipates potential stampede locations
