@@ -1,12 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "dev": "next dev",
     "start": "next start"
   },
   "dependencies": {
     "next": "latest",
+    "next-sitemap": "^4.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
