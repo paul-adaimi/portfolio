@@ -29,8 +29,10 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
               <span className={styles.code}>{"<Type> "}</span>
               <AnimatedTextCoordinated id={0}>
                 {selectedProject.type === "phone"
-                  ? "Mobile Application"
-                  : "Web Application"}
+                  ? "Mobile App"
+                  : selectedProject.type === "web"
+                  ? "Web App"
+                  : "Desktop App"}
               </AnimatedTextCoordinated>
               <span className={styles.code}>{" </Type>"}</span>
             </p>

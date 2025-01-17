@@ -83,21 +83,7 @@ const Device = ({ selectedProject }) => {
         !isFirstRenderRef.current && styles.animateIn
       } ${isDelaying && styles.animateOut}`}
     >
-      {selectedProject.type === "web" ? (
-        <Laptop isFull={true}>
-          <Image
-            src={selectedProject.imgSrc}
-            alt={selectedProject.title}
-            width={300}
-            height={400}
-            style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: 20,
-            }}
-          />
-        </Laptop>
-      ) : (
+      {selectedProject.type === "phone" ? (
         <Phone isFull={true}>
           <Image
             src={selectedProject.imgSrc}
@@ -111,6 +97,20 @@ const Device = ({ selectedProject }) => {
             }}
           />
         </Phone>
+      ) : (
+        <Laptop isFull={true}>
+          <Image
+            src={selectedProject.imgSrc}
+            alt={selectedProject.title}
+            width={300}
+            height={400}
+            style={{
+              height: "100%",
+              width: "100%",
+              borderRadius: 20,
+            }}
+          />
+        </Laptop>
       )}
     </div>
   );

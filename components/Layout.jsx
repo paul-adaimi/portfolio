@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
         />
         <meta
           name="keywords"
-          content="Paul Adaimi, Software Developer, Portfolio, Web Development, Mobile Developer"
+          content="Paul Adaimi, Adaimi, Software Developer, Portfolio, Web Development, Mobile Developer"
           key="keywords"
         />
         <meta name="author" content="Paul Adaimi" key="author" />

@@ -2,7 +2,6 @@ import styles from "./SubSection.module.css";
 import Image from "next/image";
 import AnimatedTextCoordinated from "../Global/AnimatedTextCoordinated";
 
-// TODO: Update CV and add it here
 export default function SubSection({ offset }) {
   return (
     <div className={styles.content}>
