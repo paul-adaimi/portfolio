@@ -100,6 +100,21 @@
   align-items: center;
 }
 
+.active {
+  opacity: 0.9;
+}
+
+.linkUnderline {
+  width: 0px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+.linkUnderline.active {
+  width: 100%;
+}
+
 @media screen and (max-width: 700px) {
   .header {
     padding-left: 20px;

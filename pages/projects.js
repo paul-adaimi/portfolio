@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import Index from "../components/ProjectsPage/Index";
-import { AnimatedTextCoordinatorProvider } from "../components/Global/AnimatedTextCoordinatorProvider";
+import Head from "next/head";
 
 export default function Projects() {
   const projects = useMemo(
@@ -56,5 +56,53 @@ Developed a cross-platform application, where diﬀerent companies use their own
     ],
     []
   );
-  return <Index projects={projects} />;
+  return (
+    <>
+      <Head>
+        <title>Paul Adaimi - My Projects</title>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Paul Adaimi - My Projects",
+              url: "https://pauladaimi.com/projects",
+              description: "Paul Adaimi's Projects",
+              isPartOf: {
+                "@type": "WebSite",
+                url: "https://pauladaimi.com",
+              },
+            }),
+          }}
+          key="webpage-jsonld"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://pauladaimi.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "My Projects",
+                  item: "https://pauladaimi.com/projects",
+                },
+              ],
+            }),
+          }}
+          key="breadcrumbs-jsonld"
+        />
+      </Head>
+      <Index projects={projects} />
+    </>
+  );
 }

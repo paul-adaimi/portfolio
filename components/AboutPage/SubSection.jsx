@@ -19,6 +19,7 @@ export default function SubSection({ offset }) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.card}
+          aria-label="Visit Paul Adaimi's GitHub profile"
         >
           <p className={styles.cardTitle}>
             {"<"}
@@ -49,6 +50,7 @@ export default function SubSection({ offset }) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.card}
+          aria-label="Visit Paul Adaimi's LinkedIn profile"
         >
           <p className={styles.cardTitle}>
             {"<"}
@@ -78,6 +80,7 @@ export default function SubSection({ offset }) {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.card}
+          aria-label="Send a mail to Paul Adaimi"
         >
           <p className={styles.cardTitle}>
             {"<"}
@@ -102,7 +105,12 @@ export default function SubSection({ offset }) {
             {">"}
           </p>
         </a>
-        <a href="/CV Paul Adaimi.pdf" download className={styles.card}>
+        <a
+          href="/CV Paul Adaimi.pdf"
+          download
+          className={styles.card}
+          aria-label="Download Paul Adaimi's CV"
+        >
           <p className={styles.cardTitle}>
             {"<"}
             <AnimatedTextCoordinated id={offset + 4}>

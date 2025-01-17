@@ -28,12 +28,47 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Paul Adaimi</title>
         <meta
           name="description"
-          content="Portfolio of Paul Adaimi, Software Developer"
+          content="Paul Adaimi's Portfolio, Software Developer"
+          key="desc"
         />
-        <link rel="icon" href="logo-icon.png" />
+        <meta
+          name="keywords"
+          content="Paul Adaimi, Software Developer, Portfolio, Web Development, Mobile Developer"
+          key="keywords"
+        />
+        <meta name="author" content="Paul Adaimi" key="author" />
+        <link rel="icon" href="logo-icon.png" key="icon" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Paul Adaimi",
+              jobTitle: "Software Developer",
+              url: "https://pauladaimi.com",
+              image: "https://pauladaimi.com/images/paul-adaimi.jpg",
+              description:
+                "Paul Adaimi is a software developer specializing in web and mobile app development.",
+              sameAs: [
+                "https://linkedin.com/in/paul-adaimi",
+                "https://github.com/paul-adaimi",
+                "https://twitter.com/paul-adaimi",
+              ],
+              knowsAbout: [
+                "JavaScript",
+                "React",
+                "Next.js",
+                "Mobile Development",
+                "React Native",
+                "Expo",
+              ],
+            }),
+          }}
+          key="person-jsonld"
+        />
       </Head>
       <header className={styles.header}>
         <Link className={styles.logo} href="/">
@@ -58,6 +93,7 @@ const Layout = ({ children }) => {
               href="https://github.com/paul-adaimi"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Paul Adaimi's GitHub profile"
             >
               <Image
                 src="svg/github.svg"
@@ -72,6 +108,7 @@ const Layout = ({ children }) => {
               href="https://www.linkedin.com/in/paul-adaimi-aa5b76172"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Paul Adaimi's LinkedIn profile"
             >
               <Image
                 src="svg/linkedin.svg"
@@ -86,6 +123,7 @@ const Layout = ({ children }) => {
               href="mailto:hello@pauladaimi.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Send a mail to Paul Adaimi"
             >
               <Image
                 src="svg/mail.svg"
@@ -100,6 +138,7 @@ const Layout = ({ children }) => {
               className={`${styles.link} ${styles.cvLink}`}
               href="/CV Paul Adaimi.pdf"
               download
+              aria-label="Download Paul Adaimi's CV"
             >
               <Image
                 src="svg/download-paper.svg"
@@ -136,6 +175,8 @@ export default Layout;
 const NavigationLink = ({ href, children, className }) => {
   const router = useRouter();
 
+  const isActive = router.pathname === href;
+
   const handleClick = (e) => {
     if (router.pathname === href) {
       e.preventDefault(); // Prevent navigation if already on the page
@@ -143,8 +184,17 @@ const NavigationLink = ({ href, children, className }) => {
   };
 
   return (
-    <Link href={href} onClick={handleClick} className={className}>
+    <Link
+      href={href}
+      onClick={handleClick}
+      className={`${className} ${styles.navigationLinkTextContainer} ${
+        isActive ? styles.active : ""
+      }`}
+    >
       {children}
+      <div
+        className={`${styles.linkUnderline} ${isActive ? styles.active : ""}`}
+      ></div>
     </Link>
   );
 };

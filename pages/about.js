@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import Index from "../components/AboutPage/Index";
 import { AnimatedTextCoordinatorProvider } from "../components/Global/AnimatedTextCoordinatorProvider";
 import { useAnimatedTitle } from "../components/Global/AnimatedTitleProvider";
+import Head from "next/head";
 
 export default function About() {
   const data = useMemo(
@@ -83,8 +84,54 @@ Engineered a client-server application for data acquisition from Android mobiles
   );
   const { isAnimating } = useAnimatedTitle();
   return (
-    <AnimatedTextCoordinatorProvider shouldStart={!isAnimating}>
-      <Index data={data} />
-    </AnimatedTextCoordinatorProvider>
+    <>
+      <Head>
+        <title>Paul Adaimi - About Me</title>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: "Paul Adaimi - About Me",
+              url: "https://pauladaimi.com/about",
+              description: "Paul Adaimi's Education and Experiences",
+              isPartOf: {
+                "@type": "WebSite",
+                url: "https://pauladaimi.com",
+              },
+            }),
+          }}
+          key="webpage-jsonld"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://pauladaimi.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "About Me",
+                  item: "https://pauladaimi.com/about",
+                },
+              ],
+            }),
+          }}
+          key="breadcrumbs-jsonld"
+        />
+      </Head>
+      <AnimatedTextCoordinatorProvider shouldStart={!isAnimating}>
+        <Index data={data} />
+      </AnimatedTextCoordinatorProvider>
+    </>
   );
 }

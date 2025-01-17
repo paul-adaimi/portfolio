@@ -61,6 +61,9 @@ export default function VSCode({ projects, selectedProject, handleTabClick }) {
                         style={{
                           textDecoration: "underline",
                         }}
+                        aria-label={`Visit ${
+                          selectedProject.title
+                        } on ${capitalize(linkKey)}`}
                       >
                         <AnimatedTextCoordinated typingSpeed={20} id={2}>
                           {capitalize(linkKey)}
