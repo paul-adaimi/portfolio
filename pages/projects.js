@@ -12,7 +12,8 @@ export default function Projects() {
         technologies: ["Expo", "React Native", "Firebase", "Javascript"],
         productionLinks: {
           apple: "https://apps.apple.com/tr/app/bleumer/id6738310999?uo=2",
-          android: "coming soon",
+          android:
+            "https://play.google.com/store/apps/details?id=com.anonymous.bleumer&pli=1",
         },
         description: `This mobile app is a salmon delivery platform designed for Bleumer ME, a prominent Canadian brand in the salmon industry that expanded to Lebanon in January 2015.
         
