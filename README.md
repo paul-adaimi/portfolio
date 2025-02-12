@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Welcome to Paul Adaimi's Portfolio
+
+[Click Here](https://pauladaimi.com) to check my website.
