@@ -102,8 +102,8 @@ const Device = ({ selectedProject }) => {
           <Image
             src={selectedProject.imgSrc}
             alt={selectedProject.title}
-            width={300}
-            height={400}
+            width={1000}
+            height={1000}
             style={{
               height: "100%",
               width: "100%",
